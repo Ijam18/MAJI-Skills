@@ -1,8 +1,50 @@
+<div align="center">
+
 # 🛠 MAJI Skills
+
+### **Stop repeating yourself to Claude.**
+
+Four patterns that make Claude listen the first time. Save **~58% tokens**. Ship without rework. Free.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-A88838.svg)](./LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-8B1A1A.svg)](https://docs.claude.com/en/docs/claude-code)
 [![Methodology](https://img.shields.io/badge/Methodology-No%20Codes%2C%20Only%20Vibes-0A0A0A.svg)](https://maji.org)
+
+[**⬇️ Install in 30 seconds**](#-installation) · [**⭐ Star this repo**](https://github.com/Ijam18/MAJI-Skills) · [**🔗 Share on LinkedIn**](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FIjam18%2FMAJI-Skills)
+
+</div>
+
+---
+
+## 🎯 Why You Should Use MAJI Skills
+
+Every Claude Code session, you're fighting the same battles:
+
+- 😩 Claude **extrapolates beyond what you asked** — fixes the typo AND refactors three files you didn't want touched
+- 💸 Token bills creep up because Claude responds with **paragraphs of preamble** before the actual answer
+- 🔁 You have to **re-explain your working style every session** — Claude forgets you want bullets, not essays
+- 🚨 Claude treats "let's discuss this" as "let's build it now" — and you delete 11 commits to recover
+- 😤 When you say *"that's not right"*, Claude tries variant 2, variant 3 — instead of stopping to ask what you actually want
+
+**MAJI Skills fix all of this** with a discipline layer that activates on every prompt.
+
+> *"This is the closest thing to having a senior dev who actually reads your message before responding."*
+
+### What you get in 30 seconds:
+
+✅ Claude recognises **outcome-first prompts** and skips the padding
+✅ **Decision modes** — discuss / build / pause / pivot — eliminate ambiguity
+✅ **Frustration signals halt Claude** instead of doubling down
+✅ **Pre-Action Gate** prevents destructive surprises (force pushes, scope creep)
+✅ **~58% token savings** per exchange — real $$$ on Pro tier
+✅ Works on **any project, any language, any stack**
+✅ Free, MIT licensed, no signup, no telemetry
+
+[**→ Install now**](#-installation) · [**→ See real before/after examples**](#-real-beforeafter-examples)
+
+---
+
+## 📖 Background
 
 A growing collection of Claude skills that make AI collaboration **tighter, faster, and less wasteful**.
 
@@ -324,3 +366,17 @@ MAJI (Malaysia Artificial Joint Institute) is an Applied AI learning movement ba
 **Methodology:** *No Codes, Only Vibes* — we don't teach coding, we teach building.
 
 Learn more: [maji.org](https://maji.org)
+
+---
+
+<div align="center">
+
+## Ready to ship faster?
+
+**Install MAJI Skills in 30 seconds. Free. No signup. MIT licensed.**
+
+[**⬇️ Install Now**](#-installation) · [**⭐ Star the Repo**](https://github.com/Ijam18/MAJI-Skills) · [**🔗 Share with a Friend**](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FIjam18%2FMAJI-Skills)
+
+*Built by builders, for builders. — MAJI*
+
+</div>
