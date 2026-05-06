@@ -141,6 +141,111 @@ Want deeper detail on dependency arrays or cleanup timing?
 
 ---
 
+### `maji-doc` — Concise Documentation Generator
+
+Reads code (file/folder/project) and writes documentation that's actually useful. README, function docs, API references — plain language, working examples, no padding.
+
+```
+debounce(fn, ms) — wraps a function so it only fires
+after ms milliseconds of silence.
+
+Args:  fn (function), ms (number)
+Returns: debounced version of fn
+Example: const search = debounce(fetchResults, 300)
+Notes: `this` binding is lost — use arrow functions
+```
+
+[→ Read the full skill](./maji-doc/SKILL.md)
+
+---
+
+### `maji-test` — Disciplined Test Generation
+
+Generates tests focused on behaviour and edge cases, not coverage padding. One test = one case = one assertion. Names tests for the case, not the function.
+
+```
+describe('parseDate')
+
+  Happy path:
+    - returns Date for valid ISO string
+  Edge cases:
+    - returns null for empty string
+    - returns null for whitespace-only string
+  Error cases:
+    - returns null for malformed date
+    - returns null for non-string input
+```
+
+[→ Read the full skill](./maji-test/SKILL.md)
+
+---
+
+### `maji-refactor` — Scope-Guarded Refactoring
+
+Refactors code without sliding into "while I was there" syndrome. Define scope → identify minimum diff → preserve behaviour → verify with tests. Pre-Action Gate prevents scope creep.
+
+```
+SCOPE
+- Changes: src/auth.ts (login function)
+- Preserved: login() public signature
+- Out of scope: error handling refactor
+
+[surgical diff]
+
+VERIFICATION
+- Tests: 12 passing (no changes)
+- Behaviour preserved
+```
+
+[→ Read the full skill](./maji-refactor/SKILL.md)
+
+---
+
+### `maji-summary` — Long Content Compression
+
+Compresses meeting notes, transcripts, long docs, or threads into TLDR + key points + action items. Length-tunable (`--brief`, `--full`, `--outline`).
+
+```
+TLDR
+Team agreed to ship MVP by 20 May with auth and search.
+
+KEY POINTS
+1. MVP scope: auth, search, dashboard
+2. Stack: Next.js + Supabase
+3. Demo to Pengetua scheduled 18 May
+
+ACTION ITEMS
+☐ Ijam — landing page copy by 10 May
+☐ Mung — RLS policies by 8 May
+```
+
+[→ Read the full skill](./maji-summary/SKILL.md)
+
+---
+
+### `maji-todo` — Codebase TODO Extractor
+
+Scans a codebase for TODO/FIXME/HACK/BUG comments and outputs a triaged list — grouped by urgency, flagged by age. Helps decide what to address vs what to delete.
+
+```
+8 TODOs found
+
+🔴 High Priority (BUG)
+src/auth.ts:42 — BUG: token refresh fails on Safari
+  ijam, 14 days ago
+
+🟡 Medium (FIXME, HACK)
+src/utils.ts:7 — HACK: monkey-patch for IE
+  mung, 95 days ago [STALE]
+
+🟢 Low (TODO)
+[...]
+```
+
+[→ Read the full skill](./maji-todo/SKILL.md)
+
+---
+
 ## 🧠 How `maji-mode` Works
 
 ```mermaid
