@@ -56,6 +56,99 @@ By [MAJI](https://maji.org) · *No Codes, Only Vibes.*
 
 ## ✨ Skills in this Repo
 
+10 skills covering the full development workflow — chat, explain, build, test, refactor, review, debug, doc, commit, cleanup.
+
+### Skill Index
+
+| Skill | Use case | Frequency | Tier |
+|---|---|---|---|
+| **[maji-mode](./maji-mode/SKILL.md)** | Foundation discipline (every Claude session) | Always | 🔴 Tier 1 — Install first |
+| **[maji-commit](./maji-commit/SKILL.md)** | Auto-generate git commit messages | Daily | 🟠 Tier 2 — High daily value |
+| **[maji-explain](./maji-explain/SKILL.md)** | Fast layered explanations of code/concepts | Daily | 🟠 Tier 2 |
+| **[maji-debug](./maji-debug/SKILL.md)** | 5-step disciplined debug protocol | Daily | 🟡 Tier 3 — Per task |
+| **[maji-review](./maji-review/SKILL.md)** | Severity-grouped code review | Daily | 🟡 Tier 3 |
+| **[maji-test](./maji-test/SKILL.md)** | Behaviour-focused test generation | Per feature | 🟡 Tier 3 |
+| **[maji-doc](./maji-doc/SKILL.md)** | Concise documentation generator | Per feature | 🟢 Tier 4 |
+| **[maji-refactor](./maji-refactor/SKILL.md)** | Scope-guarded refactoring | Per task | 🟢 Tier 4 |
+| **[maji-summary](./maji-summary/SKILL.md)** | Long content compression | Per meeting/doc | ⚪ Tier 5 — Situational |
+| **[maji-todo](./maji-todo/SKILL.md)** | Codebase TODO triage | Sprint-level | ⚪ Tier 5 |
+
+### Recommended Install Order
+
+```mermaid
+flowchart LR
+    T1[🔴 Tier 1<br/>Install first] --> M[maji-mode]
+    T2[🟠 Tier 2<br/>High daily value] --> C[maji-commit]
+    T2 --> E[maji-explain]
+    T3[🟡 Tier 3<br/>Per task] --> D[maji-debug]
+    T3 --> R[maji-review]
+    T3 --> Te[maji-test]
+    T4[🟢 Tier 4<br/>Per feature] --> Do[maji-doc]
+    T4 --> Rf[maji-refactor]
+    T5[⚪ Tier 5<br/>Situational] --> S[maji-summary]
+    T5 --> To[maji-todo]
+
+    style T1 fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
+    style T2 fill:#A88838,stroke:#0A0A0A,color:#FFFFFF
+    style T3 fill:#0A0A0A,stroke:#0A0A0A,color:#FFFFFF
+    style T4 fill:#3A3A3A,stroke:#0A0A0A,color:#FFFFFF
+    style T5 fill:#B5B5B5,stroke:#0A0A0A,color:#0A0A0A
+    style M fill:#F5F1EA,stroke:#0A0A0A
+    style C fill:#F5F1EA,stroke:#0A0A0A
+    style E fill:#F5F1EA,stroke:#0A0A0A
+    style D fill:#F5F1EA,stroke:#0A0A0A
+    style R fill:#F5F1EA,stroke:#0A0A0A
+    style Te fill:#F5F1EA,stroke:#0A0A0A
+    style Do fill:#F5F1EA,stroke:#0A0A0A
+    style Rf fill:#F5F1EA,stroke:#0A0A0A
+    style S fill:#F5F1EA,stroke:#0A0A0A
+    style To fill:#F5F1EA,stroke:#0A0A0A
+```
+
+**Quick start path:** Install Tier 1 + 2 first (3 skills). Add Tier 3 within a week. Tier 4-5 as needed.
+
+### How Skills Compose
+
+Skills work together — `maji-mode` is the foundation; others inherit its discipline:
+
+```mermaid
+flowchart TD
+    M([maji-mode<br/>foundation])
+
+    M --> C[maji-commit]
+    M --> E[maji-explain]
+    M --> R[maji-review]
+    M --> D[maji-debug]
+    M --> T[maji-test]
+    M --> Rf[maji-refactor]
+    M --> Do[maji-doc]
+    M --> S[maji-summary]
+    M --> To[maji-todo]
+
+    D -.composes with.-> T
+    Rf -.composes with.-> T
+    Rf -.composes with.-> R
+    Do -.composes with.-> E
+    To -.composes with.-> D
+    To -.composes with.-> Rf
+    R -.composes with.-> D
+
+    style M fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
+    style C fill:#A88838,stroke:#0A0A0A,color:#FFFFFF
+    style E fill:#A88838,stroke:#0A0A0A,color:#FFFFFF
+    style R fill:#F5F1EA,stroke:#0A0A0A
+    style D fill:#F5F1EA,stroke:#0A0A0A
+    style T fill:#F5F1EA,stroke:#0A0A0A
+    style Rf fill:#F5F1EA,stroke:#0A0A0A
+    style Do fill:#F5F1EA,stroke:#0A0A0A
+    style S fill:#F5F1EA,stroke:#0A0A0A
+    style To fill:#F5F1EA,stroke:#0A0A0A
+```
+
+Solid lines = inherits discipline foundation. Dotted lines = workflow composition (e.g., `maji-debug` → write missing tests with `maji-test`).
+
+---
+
 ### `maji-mode` — Claude Collaboration Discipline
 
 A discipline layer between you and Claude. Activates 4 patterns that make Claude listen properly the first time — saving tokens, reducing rework, and preventing scope drift.
@@ -63,6 +156,7 @@ A discipline layer between you and Claude. Activates 4 patterns that make Claude
 [→ Read the full skill](./maji-mode/SKILL.md)
 
 ---
+
 
 ### `maji-commit` — Auto-generate Commit Messages
 
@@ -78,6 +172,46 @@ Composes with `maji-mode` for terse, no-preamble output.
 [→ Read the full skill](./maji-commit/SKILL.md)
 
 ---
+
+
+### `maji-explain` — Fast, Layered Explanations
+
+Explains code, libraries, errors, or concepts in 3 layers: 1-sentence answer → 5-bullet detail → deep-dive only on request. No "let me walk you through this".
+
+```
+useEffect runs side effects after a React component renders,
+with optional dependency tracking.
+
+Key points:
+• Fires after the DOM updates, not during render
+• Dependency array controls re-runs
+• Return a function to clean up
+• Gotcha: stale closures from missed deps
+
+Want deeper detail on dependency arrays or cleanup timing?
+```
+
+[→ Read the full skill](./maji-explain/SKILL.md)
+
+---
+
+
+### `maji-debug` — Disciplined Debug Protocol
+
+Turns Claude into a debug partner who slows down to think, not a guess-and-check refactor machine. 5-step protocol: read symptom → form hypothesis → verify → Pre-Action Gate → minimum-change fix.
+
+```
+SYMPTOM    TypeError on login.ts:14 — user.email undefined.
+HYPOTHESIS API response shape changed; user nested under data.
+VERIFICATION Confirmed in api/types.ts — LoginResponse wraps user.
+FIX        response.user.email → response.data.user.email
+WHY        Aligns with current type. No other consumers.
+```
+
+[→ Read the full skill](./maji-debug/SKILL.md)
+
+---
+
 
 ### `maji-review` — Disciplined Code Review
 
@@ -104,60 +238,6 @@ Composes with `maji-mode` for evidence-first output.
 
 ---
 
-### `maji-debug` — Disciplined Debug Protocol
-
-Turns Claude into a debug partner who slows down to think, not a guess-and-check refactor machine. 5-step protocol: read symptom → form hypothesis → verify → Pre-Action Gate → minimum-change fix.
-
-```
-SYMPTOM    TypeError on login.ts:14 — user.email undefined.
-HYPOTHESIS API response shape changed; user nested under data.
-VERIFICATION Confirmed in api/types.ts — LoginResponse wraps user.
-FIX        response.user.email → response.data.user.email
-WHY        Aligns with current type. No other consumers.
-```
-
-[→ Read the full skill](./maji-debug/SKILL.md)
-
----
-
-### `maji-explain` — Fast, Layered Explanations
-
-Explains code, libraries, errors, or concepts in 3 layers: 1-sentence answer → 5-bullet detail → deep-dive only on request. No "let me walk you through this".
-
-```
-useEffect runs side effects after a React component renders,
-with optional dependency tracking.
-
-Key points:
-• Fires after the DOM updates, not during render
-• Dependency array controls re-runs
-• Return a function to clean up
-• Gotcha: stale closures from missed deps
-
-Want deeper detail on dependency arrays or cleanup timing?
-```
-
-[→ Read the full skill](./maji-explain/SKILL.md)
-
----
-
-### `maji-doc` — Concise Documentation Generator
-
-Reads code (file/folder/project) and writes documentation that's actually useful. README, function docs, API references — plain language, working examples, no padding.
-
-```
-debounce(fn, ms) — wraps a function so it only fires
-after ms milliseconds of silence.
-
-Args:  fn (function), ms (number)
-Returns: debounced version of fn
-Example: const search = debounce(fetchResults, 300)
-Notes: `this` binding is lost — use arrow functions
-```
-
-[→ Read the full skill](./maji-doc/SKILL.md)
-
----
 
 ### `maji-test` — Disciplined Test Generation
 
@@ -180,6 +260,26 @@ describe('parseDate')
 
 ---
 
+
+### `maji-doc` — Concise Documentation Generator
+
+Reads code (file/folder/project) and writes documentation that's actually useful. README, function docs, API references — plain language, working examples, no padding.
+
+```
+debounce(fn, ms) — wraps a function so it only fires
+after ms milliseconds of silence.
+
+Args:  fn (function), ms (number)
+Returns: debounced version of fn
+Example: const search = debounce(fetchResults, 300)
+Notes: `this` binding is lost — use arrow functions
+```
+
+[→ Read the full skill](./maji-doc/SKILL.md)
+
+---
+
+
 ### `maji-refactor` — Scope-Guarded Refactoring
 
 Refactors code without sliding into "while I was there" syndrome. Define scope → identify minimum diff → preserve behaviour → verify with tests. Pre-Action Gate prevents scope creep.
@@ -200,6 +300,7 @@ VERIFICATION
 [→ Read the full skill](./maji-refactor/SKILL.md)
 
 ---
+
 
 ### `maji-summary` — Long Content Compression
 
@@ -223,6 +324,7 @@ ACTION ITEMS
 
 ---
 
+
 ### `maji-todo` — Codebase TODO Extractor
 
 Scans a codebase for TODO/FIXME/HACK/BUG comments and outputs a triaged list — grouped by urgency, flagged by age. Helps decide what to address vs what to delete.
@@ -245,6 +347,7 @@ src/utils.ts:7 — HACK: monkey-patch for IE
 [→ Read the full skill](./maji-todo/SKILL.md)
 
 ---
+
 
 ## 🧠 How `maji-mode` Works
 
