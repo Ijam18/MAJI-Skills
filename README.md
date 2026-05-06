@@ -79,6 +79,31 @@ Composes with `maji-mode` for terse, no-preamble output.
 
 ---
 
+### `maji-review` — Disciplined Code Review
+
+Reviews a PR, diff, or file and outputs structured feedback grouped by severity. No "Great work overall!" preamble. No trailing "let me know if you'd like to discuss". Just findings.
+
+```
+3 findings: 🔴 2 critical, 🟡 1 important.
+
+🔴 Critical (2)
+──────────────
+src/auth.ts:3 — SQL injection via string interpolation
+src/auth.ts:4 — Plaintext password comparison
+
+🟡 Important (1)
+──────────────
+src/auth.ts:5 — Static token, not user-bound
+
+Verdict: Block merge. Fix critical findings first.
+```
+
+Composes with `maji-mode` for evidence-first output.
+
+[→ Read the full skill](./maji-review/SKILL.md)
+
+---
+
 ## 🧠 How `maji-mode` Works
 
 ```mermaid
@@ -159,6 +184,14 @@ flowchart LR
 | 🚧 **Pre-Action Gate** | Risky ops need confirmation before execution |
 | 🌐 **Universal** | Works across any project, any domain |
 | 📈 **Compounds** | Teaches you to prompt better — works even outside Claude |
+
+---
+
+## 🎥 See It In Action
+
+> *Demo recording coming soon — a 60-second screen capture showing `maji-mode` + `maji-commit` + `maji-review` in a real Claude Code session, side-by-side comparison with baseline Claude.*
+
+For now, see the before/after examples below.
 
 ---
 
