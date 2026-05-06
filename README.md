@@ -167,9 +167,10 @@ To verify it's active, your prompts should feel:
 
 ## Questions or Feedback?
 
-Have questions about how to use these skills, or feedback after trying them? Connect on LinkedIn:
+Have questions about how to use these skills, or feedback after trying them?
 
-→ **[Zarul Izham (Ijam)](https://www.linkedin.com/in/zarulijam/)**
+→ **LinkedIn:** [Zarul Izham (Ijam)](https://www.linkedin.com/in/zarulijam/)
+→ **Threads:** [@_zarulijam](https://www.threads.com/@_zarulijam)
 
 DMs open. Tag the repo when sharing your experience — happy to feature builders using `maji-mode` in the wild.
 
