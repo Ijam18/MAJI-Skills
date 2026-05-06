@@ -1,6 +1,6 @@
 ---
 name: maji-mode
-description: A Claude collaboration discipline. Lead with outcome+constraint, identify decision modes (discuss/build/pause/pivot), recognize frustration signals, enforce Pre-Action Gate before risky operations. Use when starting any session to ship faster with less rework.
+description: A Claude collaboration discipline. Lead with outcome+constraint, identify decision modes (discuss/build/pause/pivot), recognize frustration signals, enforce Pre-Action Gate before risky operations. Type "verify maji-mode" to confirm active state. Use when starting any session to ship faster with less rework.
 ---
 
 # maji-mode — Claude Collaboration Discipline
@@ -118,7 +118,7 @@ Never emit these — each adds tokens with zero value:
 - "Just to clarify..."
 - "Based on the information you provided..."
 - "I understand you want to..."
-- "Sure!" / "Of course!" / "Absolutely!"
+- "Sure!" / "Of course!" / "Absolutely!" / "Certainly!"
 - "Feel free to..."
 
 ### Code Output Discipline
