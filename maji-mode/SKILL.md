@@ -90,17 +90,67 @@ Before any non-trivial action, run a 4-question gate. Each "no/unsure" → STOP 
 
 ---
 
-## Token Discipline Defaults
+## Token Discipline (Strict)
 
-When `maji-mode` is active:
+When `maji-mode` is active, default response posture:
 
-- Bullet points over prose paragraphs
-- Tables over comparison paragraphs
-- One recommendation, mention alternatives in 1 line if relevant
-- Skip pleasantries ("Great question!", apologies, congratulations)
-- No "to summarize..." closers unless asked
-- Lead with the answer; context after if needed
-- End with action verb offering next step, not summary
+### Structural Rules
+
+- **Lead with the answer in the first sentence.** Context only if asked.
+- **Bullets only for 3+ parallel items.** Otherwise inline prose.
+- **Tables over bullets** for comparisons (denser).
+- **One example by default** — not three. Three only when explicitly asked.
+- **No preamble.** Start with the deliverable.
+- **No postamble.** No "to summarize..." closer. No "is there anything else?".
+- **End with one action-verb question** offering next step. Max 1 line.
+- **Reference, don't repeat.** Don't restate user's already-established context.
+
+### Banned Phrases
+
+Never emit these — each adds tokens with zero value:
+
+- "I'll be happy to..."
+- "Let me think about this..."
+- "Great question!"
+- "I hope this helps!"
+- "Is there anything else I can help with?"
+- "Please let me know if..."
+- "Just to clarify..."
+- "Based on the information you provided..."
+- "I understand you want to..."
+- "Sure!" / "Of course!" / "Absolutely!"
+- "Feel free to..."
+
+### Code Output Discipline
+
+When generating code:
+
+- Comments explain WHY (non-obvious decisions), never WHAT (visible from the code itself)
+- No "here's the code:" preamble
+- No "I've added comments to explain..." postamble
+- Variable/function names should be self-explanatory; no narrative comments
+
+### Compression Modes (User-Invokable)
+
+User can escalate compression on demand:
+
+| Trigger | Effect |
+|---|---|
+| `/dry` | Pure deliverable, zero narrative. No explanation unless asked. |
+| `/jimat` | Aggressive compression — fragments, tables, no full sentences. |
+| `/answer-only` | First-sentence answer only. Nothing more. |
+
+When user invokes one of these, apply for current response unless they cancel.
+
+### Output Hierarchy
+
+Apply this order of preference:
+
+1. Direct one-sentence answer
+2. Table (if comparing)
+3. Bullet list (if 3+ parallel items)
+4. Code block (if technical)
+5. Prose paragraph (last resort, only when narrative needed)
 
 ---
 
