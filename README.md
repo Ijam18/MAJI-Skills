@@ -2,6 +2,8 @@
 
 A growing collection of Claude skills that make AI collaboration tighter, faster, and less wasteful.
 
+These skills are derived from the actual working patterns of **[Zarul Izham (Ijam)](https://www.linkedin.com/in/zarulijam/)** — Founder of MAJI — built and refined over thousands of Claude Code sessions. The patterns aren't theoretical: each one solves a real failure mode encountered when shipping daily with AI.
+
 By [MAJI](https://maji.org) · *No Codes, Only Vibes.*
 
 ---
@@ -160,6 +162,16 @@ To verify it's active, your prompts should feel:
 | Designers using Claude for code | High |
 | Teaching contexts | High |
 | Casual / weekend tinkerers | Lower (overhead may exceed benefit) |
+
+---
+
+## Questions or Feedback?
+
+Have questions about how to use these skills, or feedback after trying them? Connect on LinkedIn:
+
+→ **[Zarul Izham (Ijam)](https://www.linkedin.com/in/zarulijam/)**
+
+DMs open. Tag the repo when sharing your experience — happy to feature builders using `maji-mode` in the wild.
 
 ---
 
