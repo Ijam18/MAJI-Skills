@@ -64,6 +64,21 @@ A discipline layer between you and Claude. Activates 4 patterns that make Claude
 
 ---
 
+### `maji-commit` — Auto-generate Commit Messages
+
+Reads your git diff and writes a clean commit message in conventional commits format. No manual typing, no overthinking the wording.
+
+```
+You stage changes → type "maji-commit" → Claude outputs:
+feat(auth): add Google OAuth flow
+```
+
+Composes with `maji-mode` for terse, no-preamble output.
+
+[→ Read the full skill](./maji-commit/SKILL.md)
+
+---
+
 ## 🧠 How `maji-mode` Works
 
 ```mermaid
