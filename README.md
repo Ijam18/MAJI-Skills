@@ -104,6 +104,43 @@ Composes with `maji-mode` for evidence-first output.
 
 ---
 
+### `maji-debug` — Disciplined Debug Protocol
+
+Turns Claude into a debug partner who slows down to think, not a guess-and-check refactor machine. 5-step protocol: read symptom → form hypothesis → verify → Pre-Action Gate → minimum-change fix.
+
+```
+SYMPTOM    TypeError on login.ts:14 — user.email undefined.
+HYPOTHESIS API response shape changed; user nested under data.
+VERIFICATION Confirmed in api/types.ts — LoginResponse wraps user.
+FIX        response.user.email → response.data.user.email
+WHY        Aligns with current type. No other consumers.
+```
+
+[→ Read the full skill](./maji-debug/SKILL.md)
+
+---
+
+### `maji-explain` — Fast, Layered Explanations
+
+Explains code, libraries, errors, or concepts in 3 layers: 1-sentence answer → 5-bullet detail → deep-dive only on request. No "let me walk you through this".
+
+```
+useEffect runs side effects after a React component renders,
+with optional dependency tracking.
+
+Key points:
+• Fires after the DOM updates, not during render
+• Dependency array controls re-runs
+• Return a function to clean up
+• Gotcha: stale closures from missed deps
+
+Want deeper detail on dependency arrays or cleanup timing?
+```
+
+[→ Read the full skill](./maji-explain/SKILL.md)
+
+---
+
 ## 🧠 How `maji-mode` Works
 
 ```mermaid
@@ -184,14 +221,6 @@ flowchart LR
 | 🚧 **Pre-Action Gate** | Risky ops need confirmation before execution |
 | 🌐 **Universal** | Works across any project, any domain |
 | 📈 **Compounds** | Teaches you to prompt better — works even outside Claude |
-
----
-
-## 🎥 See It In Action
-
-> *Demo recording coming soon — a 60-second screen capture showing `maji-mode` + `maji-commit` + `maji-review` in a real Claude Code session, side-by-side comparison with baseline Claude.*
-
-For now, see the before/after examples below.
 
 ---
 
