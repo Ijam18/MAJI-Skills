@@ -342,6 +342,91 @@ To verify it's active, your prompts should feel:
 
 ---
 
+## ❓ FAQ
+
+<details>
+<summary><strong>How do I verify maji-mode is actually active?</strong></summary>
+
+After install, type `verify maji-mode` in your Claude Code session. You should get a one-line confirmation showing 4 active patterns + current compression mode. If Claude responds with generic text instead, the skill isn't loaded — re-check install path.
+
+</details>
+
+<details>
+<summary><strong>Does this slow Claude down?</strong></summary>
+
+No. The patterns reduce response length, which means Claude streams faster. You'll feel it especially on `/dry` and `/jimat` modes.
+
+</details>
+
+<details>
+<summary><strong>Will this work with Cursor / Continue / other AI tools?</strong></summary>
+
+The skill format is Claude Code-specific, but **the patterns are universal**. Copy `maji-mode/SKILL.md` content into Cursor's `.cursor/rules` or Continue's system prompt and most patterns transfer. Decision modes, frustration signals, and banned phrases work with any LLM.
+
+</details>
+
+<details>
+<summary><strong>Can I customize the patterns? I want some but not others.</strong></summary>
+
+Yes — `maji-mode/SKILL.md` is just text. Fork the repo, edit the file, install your version. Common customizations:
+
+- Remove banned phrases you don't mind (some users like "Great question!")
+- Adjust compression default (some prefer slightly more verbose by default)
+- Add your own magic phrases vocabulary
+- Translate to your language
+
+</details>
+
+<details>
+<summary><strong>Does this work on Claude Pro / Max / API?</strong></summary>
+
+Works on any tier that supports Claude Code skills. Token savings matter most on metered API or hitting Pro tier limits — that's where the 75% reduction translates to real $$$.
+
+</details>
+
+<details>
+<summary><strong>How do I uninstall?</strong></summary>
+
+Delete the skill folder:
+
+```bash
+rm -rf ~/.claude/skills/maji-mode
+```
+
+Or for project-level: `rm -rf ./.claude/skills/maji-mode`. If you appended SKILL.md to your `~/.claude/CLAUDE.md`, edit that file to remove the section.
+
+</details>
+
+<details>
+<summary><strong>Does this send any data anywhere? Telemetry?</strong></summary>
+
+No. The skill is a static markdown file Claude reads locally. Zero telemetry, zero phone-home, zero tracking. MIT licensed — read the file, you'll see.
+
+</details>
+
+<details>
+<summary><strong>What if I miss the friendly tone?</strong></summary>
+
+The patterns reduce padding but Claude still gives quality answers. If you want some warmth back, invoke compression less aggressively — skip `/jimat` mode and stick with default. Or fork and adjust the banned phrases list to allow some pleasantries.
+
+</details>
+
+<details>
+<summary><strong>Will this conflict with my other skills?</strong></summary>
+
+Generally no — `maji-mode` defines response posture, not domain logic. It composes well with other skills (e.g., a code-review skill, a documentation skill). If you hit conflicts, file an issue with details.
+
+</details>
+
+<details>
+<summary><strong>I tried it and it feels too tight. What now?</strong></summary>
+
+Two options: (1) skip compression modes (`/dry`, `/jimat`) — default `maji-mode` is already terse but still readable. (2) Fork and remove the strict token discipline section — keep just the 4 patterns (outcome-first, decision modes, frustration signals, Pre-Action Gate) without banned phrases.
+
+</details>
+
+---
+
 ## 💬 Questions or Feedback?
 
 Have questions about how to use these skills, or feedback after trying them?

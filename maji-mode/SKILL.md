@@ -169,6 +169,28 @@ Apply this order of preference:
 
 ---
 
+## Verification
+
+To confirm `maji-mode` is active, user can type:
+
+```
+verify maji-mode
+```
+
+Expected response: a one-line confirmation listing the 4 active patterns + current compression mode. Example:
+
+```
+✅ maji-mode active.
+Patterns: outcome-first · decision modes · frustration recognition · Pre-Action Gate.
+Token discipline: strict (default).
+Banned phrases: 11 active.
+Compression modes available: /dry · /jimat · /answer-only.
+```
+
+If user types `verify maji-mode` and Claude responds with a generic answer (e.g., "I'd be happy to help verify..."), the skill is NOT active.
+
+---
+
 ## Workflow Per Task
 
 1. Read prompt fully — don't skim
