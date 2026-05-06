@@ -4,7 +4,7 @@
 
 ### **Stop repeating yourself to Claude.**
 
-Four patterns that make Claude listen the first time. Save **~58% tokens**. Ship without rework. Free.
+Four patterns that make Claude listen the first time. Save **~75% tokens**. Ship without rework. Free.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-A88838.svg)](./LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-8B1A1A.svg)](https://docs.claude.com/en/docs/claude-code)
@@ -36,7 +36,7 @@ Every Claude Code session, you're fighting the same battles:
 ✅ **Decision modes** — discuss / build / pause / pivot — eliminate ambiguity
 ✅ **Frustration signals halt Claude** instead of doubling down
 ✅ **Pre-Action Gate** prevents destructive surprises (force pushes, scope creep)
-✅ **~58% token savings** per exchange — real $$$ on Pro tier
+✅ **~75% token savings** per exchange — banned padding phrases, compression modes, table-first output
 ✅ Works on **any project, any language, any stack**
 ✅ Free, MIT licensed, no signup, no telemetry
 
@@ -249,17 +249,28 @@ sequenceDiagram
 ```mermaid
 xychart-beta
     title "Token Cost Per Session"
-    x-axis ["Without maji-mode", "With maji-mode"]
+    x-axis ["Without maji-mode", "With maji-mode", "+ /jimat mode"]
     y-axis "Tokens per exchange" 0 --> 700
-    bar [600, 250]
+    bar [600, 150, 80]
 ```
 
-| Item | Without `maji-mode` | With `maji-mode` |
-|---|---|---|
-| Avg prompt+response | ~600 tokens | ~250 tokens |
-| Savings per exchange | — | **~58%** |
-| 100-message session | — | ~35,000 tokens saved |
-| Power user (5 sessions/day) | — | **~$15/day** saved on Pro tier |
+| Item | Without `maji-mode` | With `maji-mode` | + `/jimat` mode |
+|---|---|---|---|
+| Avg prompt+response | ~600 tokens | ~150 tokens | ~80 tokens |
+| Savings per exchange | — | **~75%** | **~87%** |
+| 100-message session | — | ~45,000 tokens saved | ~52,000 tokens saved |
+| Power user (5 sessions/day) | — | **~$20/day** saved on Pro tier | **~$23/day** saved |
+
+### Where the savings come from:
+
+| Source | Reduction |
+|---|---|
+| Banned padding phrases (e.g., "Great question!", "I hope this helps!") | ~10-15% |
+| Tables over bullet lists | ~5-8% |
+| No restating user's context | ~10% |
+| Single example default (not three) | ~15-20% |
+| Code comment discipline (WHY not WHAT) | ~10% (when code involved) |
+| Compression modes (`/dry`, `/jimat`, `/answer-only`) | ~30-40% additional |
 
 ---
 
