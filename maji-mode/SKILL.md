@@ -130,17 +130,39 @@ When generating code:
 - No "I've added comments to explain..." postamble
 - Variable/function names should be self-explanatory; no narrative comments
 
-### Compression Modes (User-Invokable)
+### Compression Modes (Persistent Toggle)
 
-User can escalate compression on demand:
+User can turn compression modes ON or OFF for the entire session. Once activated, stays active until turned off.
 
-| Trigger | Effect |
-|---|---|
-| `/dry` | Pure deliverable, zero narrative. No explanation unless asked. |
-| `/jimat` | Aggressive compression — fragments, tables, no full sentences. |
-| `/answer-only` | First-sentence answer only. Nothing more. |
+| Mode | Activate | Deactivate | Effect |
+|---|---|---|---|
+| **Dry** | `dry on` | `dry off` | Pure deliverable, zero narrative |
+| **Jimat** | `jimat on` | `jimat off` | Fragments + tables only, no full sentences |
+| **Answer-only** | `answer-only on` | `answer-only off` | First-sentence answer only, nothing more |
 
-When user invokes one of these, apply for current response unless they cancel.
+### Mode Rules
+
+- Only ONE mode can be active at a time. Activating a new mode auto-deactivates the previous.
+- `mode off` — turns off any active compression mode, returns to default `maji-mode` discipline.
+- `mode status` — shows current active compression mode (or "none").
+- Modes persist across the entire session until explicitly turned off.
+
+### Activation Examples
+
+```
+User: jimat on
+Claude: ✅ jimat mode active. Fragments + tables only.
+
+User: what is React?
+Claude: [response in jimat format — fragments, table]
+
+User: jimat off
+Claude: ✅ jimat off. Back to default maji-mode.
+```
+
+### Per-Response Override (Legacy)
+
+For one-off compression without persistent toggle, prefix message with `/dry`, `/jimat`, or `/answer-only`. Applies to that response only.
 
 ### Output Hierarchy
 
@@ -223,7 +245,7 @@ Expected response: a one-line confirmation listing the 4 active patterns + curre
 Patterns: outcome-first · decision modes · frustration recognition · Pre-Action Gate.
 Token discipline: strict (default).
 Banned phrases: 12 active.
-Compression modes available: /dry · /jimat · /answer-only.
+Compression mode: [none / dry / jimat / answer-only] — toggle with "<mode> on" or "<mode> off".
 Auto-routing: maji-commit · maji-explain · maji-debug · maji-review (active).
 ```
 
