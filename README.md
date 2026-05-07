@@ -559,17 +559,6 @@ Two options: (1) skip compression modes (`/dry`, `/jimat`) — default `maji-mod
 
 ---
 
-## 💬 Questions or Feedback?
-
-Have questions about how to use these skills, or feedback after trying them?
-
-→ **LinkedIn:** [Zarul Izham (Ijam)](https://www.linkedin.com/in/zarulijam/)
-→ **Threads:** [@_zarulijam](https://www.threads.com/@_zarulijam)
-
-DMs open. Tag the repo when sharing your experience — happy to feature builders using `maji-mode` in the wild.
-
----
-
 ## 🤝 Contributing
 
 PRs welcome. Patterns to add should be:
@@ -587,12 +576,17 @@ MIT — use freely, modify freely, attribute when you can. See [LICENSE](./LICEN
 
 ---
 
-## 🌱 About MAJI
+## 🌱 About MAJI · Connect
 
 MAJI (Malaysia Artificial Joint Institute) is an Applied AI movement that builds tools, runs workshops, and ships skills for people who want to use AI as a builder — not just a consumer.
 
 **Origin:** Malaysia. **Audience:** anyone, anywhere.
 **Methodology:** *No Codes, Only Vibes* — we don't teach coding, we teach building.
 
-These skills are one of those things.
+Questions, feedback, or sharing your experience? DMs open:
+
+→ **LinkedIn:** [Zarul Izham (Ijam)](https://www.linkedin.com/in/zarulijam/)
+→ **Threads:** [@_zarulijam](https://www.threads.com/@_zarulijam)
+
+Tag the repo when sharing — happy to feature builders using `maji-mode` in the wild.
 
