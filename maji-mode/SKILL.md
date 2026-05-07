@@ -282,5 +282,5 @@ With `maji-mode`, you say what you want. Claude handles the rest. One less thing
 
 ---
 
-*`maji-mode` is a methodology by MAJI · Malaysia Artificial Joint Institute · maji.org*
+*`maji-mode` is a methodology by MAJI · Malaysia Artificial Joint Institute*
 *No Codes, Only Vibes.*
