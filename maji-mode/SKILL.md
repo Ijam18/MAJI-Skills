@@ -169,6 +169,45 @@ Apply this order of preference:
 
 ---
 
+## Auto-Routing — Sister Skills Active by Default
+
+When `maji-mode` is active, sister skills (`maji-commit`, `maji-explain`, `maji-debug`, `maji-review`) auto-trigger based on prompt intent. User does NOT need to type each skill name explicitly.
+
+### Detection Rules
+
+| User's natural input | Auto-applies |
+|---|---|
+| "what is X", "explain X", "how does X work", "what does X do", "tell me about X" | `maji-explain` (3-layer format) |
+| Error message, stack trace, "broken", "not working", "bug", "crash", "throws", "fails when" | `maji-debug` (5-step protocol) |
+| Paste of code/diff alone, "review this", "look at this", "any issues?", "is this OK?" | `maji-review` (severity-grouped) |
+| "commit message", staged diff visible, "what should this commit say", "write a commit" | `maji-commit` (conventional format) |
+| Anything else | Default `maji-mode` patterns |
+
+### Detection Priority
+
+If multiple triggers match (e.g., user pastes code AND asks "what is this?"), apply this priority order:
+
+1. Explicit invocation (`maji-X` typed) overrides everything
+2. Error/stack trace → `maji-debug` (highest implicit priority)
+3. Code/diff paste with no question → `maji-review`
+4. Question word ("what", "how", "why") → `maji-explain`
+5. Commit-related → `maji-commit`
+6. Default → `maji-mode`
+
+### Override
+
+User can always force:
+
+- Explicit: `maji-review src/auth.ts` → forces review format
+- Compression: `/dry` / `/jimat` / `/answer-only` → escalates token discipline
+- Skip auto-routing: prefix with `?` (e.g., `?just chat about this`) → standard chat mode
+
+### Silent Application
+
+Auto-routing applies silently — Claude does NOT announce "I'll use maji-explain for this". Just outputs in the right format. User experience: ask anything in plain English, get correctly-formatted response.
+
+---
+
 ## Verification
 
 To confirm `maji-mode` is active, user can type:
@@ -183,8 +222,9 @@ Expected response: a one-line confirmation listing the 4 active patterns + curre
 ✅ maji-mode active.
 Patterns: outcome-first · decision modes · frustration recognition · Pre-Action Gate.
 Token discipline: strict (default).
-Banned phrases: 11 active.
+Banned phrases: 12 active.
 Compression modes available: /dry · /jimat · /answer-only.
+Auto-routing: maji-commit · maji-explain · maji-debug · maji-review (active).
 ```
 
 If user types `verify maji-mode` and Claude responds with a generic answer (e.g., "I'd be happy to help verify..."), the skill is NOT active.
