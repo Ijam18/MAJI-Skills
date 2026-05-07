@@ -56,9 +56,9 @@ By [MAJI](https://maji.org) · *No Codes, Only Vibes.*
 
 ## ✨ Skills in this Repo
 
-10 skills covering the full development workflow — chat, explain, build, test, refactor, review, debug, doc, commit, cleanup.
+5 core skills covering the highest-frequency dev workflows — chat, explain, debug, review, commit. Plus 5 experimental skills for less-frequent use cases.
 
-### Skill Index
+### Core Skills (5)
 
 | Skill | Use case | Frequency | Tier |
 |---|---|---|---|
@@ -67,11 +67,14 @@ By [MAJI](https://maji.org) · *No Codes, Only Vibes.*
 | **[maji-explain](./maji-explain/SKILL.md)** | Fast layered explanations of code/concepts | Daily | 🟠 Tier 2 |
 | **[maji-debug](./maji-debug/SKILL.md)** | 5-step disciplined debug protocol | Daily | 🟡 Tier 3 — Per task |
 | **[maji-review](./maji-review/SKILL.md)** | Severity-grouped code review | Daily | 🟡 Tier 3 |
-| **[maji-test](./maji-test/SKILL.md)** | Behaviour-focused test generation | Per feature | 🟡 Tier 3 |
-| **[maji-doc](./maji-doc/SKILL.md)** | Concise documentation generator | Per feature | 🟢 Tier 4 |
-| **[maji-refactor](./maji-refactor/SKILL.md)** | Scope-guarded refactoring | Per task | 🟢 Tier 4 |
-| **[maji-summary](./maji-summary/SKILL.md)** | Long content compression | Per meeting/doc | ⚪ Tier 5 — Situational |
-| **[maji-todo](./maji-todo/SKILL.md)** | Codebase TODO triage | Sprint-level | ⚪ Tier 5 |
+
+### Experimental Skills (5)
+
+These exist but aren't validated by real-world use yet. See [`experimental/`](./experimental) folder.
+
+`maji-test` · `maji-doc` · `maji-refactor` · `maji-summary` · `maji-todo`
+
+A skill graduates from experimental to core when daily/weekly use is proven and external feedback validates value.
 
 ### Recommended Install Order
 
@@ -82,55 +85,30 @@ flowchart LR
     T2 --> E[maji-explain]
     T3[🟡 Tier 3<br/>Per task] --> D[maji-debug]
     T3 --> R[maji-review]
-    T3 --> Te[maji-test]
-    T4[🟢 Tier 4<br/>Per feature] --> Do[maji-doc]
-    T4 --> Rf[maji-refactor]
-    T5[⚪ Tier 5<br/>Situational] --> S[maji-summary]
-    T5 --> To[maji-todo]
 
     style T1 fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
     style T2 fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
     style T3 fill:#0A0A0A,stroke:#0A0A0A,color:#FFFFFF
-    style T4 fill:#3A3A3A,stroke:#0A0A0A,color:#FFFFFF
-    style T5 fill:#B5B5B5,stroke:#0A0A0A,color:#0A0A0A
     style M fill:#F5F1EA,stroke:#0A0A0A
     style C fill:#F5F1EA,stroke:#0A0A0A
     style E fill:#F5F1EA,stroke:#0A0A0A
     style D fill:#F5F1EA,stroke:#0A0A0A
     style R fill:#F5F1EA,stroke:#0A0A0A
-    style Te fill:#F5F1EA,stroke:#0A0A0A
-    style Do fill:#F5F1EA,stroke:#0A0A0A
-    style Rf fill:#F5F1EA,stroke:#0A0A0A
-    style S fill:#F5F1EA,stroke:#0A0A0A
-    style To fill:#F5F1EA,stroke:#0A0A0A
 ```
 
-**Quick start path:** Install Tier 1 + 2 first (3 skills). Add Tier 3 within a week. Tier 4-5 as needed.
+**Quick start:** Install Tier 1 first (`maji-mode`). Add Tier 2 within first session. Add Tier 3 within first week.
 
 ### How Skills Compose
 
-Skills work together — `maji-mode` is the foundation; others inherit its discipline:
+`maji-mode` is the foundation. Other skills inherit its discipline (no preamble, banned phrases, action-verb endings).
 
 ```mermaid
 flowchart TD
     M([maji-mode<br/>foundation])
-
     M --> C[maji-commit]
     M --> E[maji-explain]
-    M --> R[maji-review]
     M --> D[maji-debug]
-    M --> T[maji-test]
-    M --> Rf[maji-refactor]
-    M --> Do[maji-doc]
-    M --> S[maji-summary]
-    M --> To[maji-todo]
-
-    D -.composes with.-> T
-    Rf -.composes with.-> T
-    Rf -.composes with.-> R
-    Do -.composes with.-> E
-    To -.composes with.-> D
-    To -.composes with.-> Rf
+    M --> R[maji-review]
     R -.composes with.-> D
 
     style M fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
@@ -138,14 +116,7 @@ flowchart TD
     style E fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
     style R fill:#F5F1EA,stroke:#0A0A0A
     style D fill:#F5F1EA,stroke:#0A0A0A
-    style T fill:#F5F1EA,stroke:#0A0A0A
-    style Rf fill:#F5F1EA,stroke:#0A0A0A
-    style Do fill:#F5F1EA,stroke:#0A0A0A
-    style S fill:#F5F1EA,stroke:#0A0A0A
-    style To fill:#F5F1EA,stroke:#0A0A0A
 ```
-
-Solid lines = inherits discipline foundation. Dotted lines = workflow composition (e.g., `maji-debug` → write missing tests with `maji-test`).
 
 ---
 
@@ -238,116 +209,20 @@ Composes with `maji-mode` for evidence-first output.
 
 ---
 
-
-### `maji-test` — Disciplined Test Generation
-
-Generates tests focused on behaviour and edge cases, not coverage padding. One test = one case = one assertion. Names tests for the case, not the function.
-
-```
-describe('parseDate')
-
-  Happy path:
-    - returns Date for valid ISO string
-  Edge cases:
-    - returns null for empty string
-    - returns null for whitespace-only string
-  Error cases:
-    - returns null for malformed date
-    - returns null for non-string input
-```
-
-[→ Read the full skill](./maji-test/SKILL.md)
-
 ---
 
+## 🧊 Status: Validation Phase
 
-### `maji-doc` — Concise Documentation Generator
+The 5 core skills are frozen for **30 days of real-world validation** (started 7 May 2026). No new skills will be added during this window. Existing experimental skills stay in [`experimental/`](./experimental).
 
-Reads code (file/folder/project) and writes documentation that's actually useful. README, function docs, API references — plain language, working examples, no padding.
+A skill graduates from experimental to core when:
+- Daily/weekly use proven by repo owner
+- 1+ external contribution (PR, issue, testimonial)
+- 30+ days of validation
 
-```
-debounce(fn, ms) — wraps a function so it only fires
-after ms milliseconds of silence.
-
-Args:  fn (function), ms (number)
-Returns: debounced version of fn
-Example: const search = debounce(fetchResults, 300)
-Notes: `this` binding is lost — use arrow functions
-```
-
-[→ Read the full skill](./maji-doc/SKILL.md)
+After validation, decisions made based on real signal — not speculation.
 
 ---
-
-
-### `maji-refactor` — Scope-Guarded Refactoring
-
-Refactors code without sliding into "while I was there" syndrome. Define scope → identify minimum diff → preserve behaviour → verify with tests. Pre-Action Gate prevents scope creep.
-
-```
-SCOPE
-- Changes: src/auth.ts (login function)
-- Preserved: login() public signature
-- Out of scope: error handling refactor
-
-[surgical diff]
-
-VERIFICATION
-- Tests: 12 passing (no changes)
-- Behaviour preserved
-```
-
-[→ Read the full skill](./maji-refactor/SKILL.md)
-
----
-
-
-### `maji-summary` — Long Content Compression
-
-Compresses meeting notes, transcripts, long docs, or threads into TLDR + key points + action items. Length-tunable (`--brief`, `--full`, `--outline`).
-
-```
-TLDR
-Team agreed to ship MVP by 20 May with auth and search.
-
-KEY POINTS
-1. MVP scope: auth, search, dashboard
-2. Stack: Next.js + Supabase
-3. Demo to Pengetua scheduled 18 May
-
-ACTION ITEMS
-☐ Ijam — landing page copy by 10 May
-☐ Mung — RLS policies by 8 May
-```
-
-[→ Read the full skill](./maji-summary/SKILL.md)
-
----
-
-
-### `maji-todo` — Codebase TODO Extractor
-
-Scans a codebase for TODO/FIXME/HACK/BUG comments and outputs a triaged list — grouped by urgency, flagged by age. Helps decide what to address vs what to delete.
-
-```
-8 TODOs found
-
-🔴 High Priority (BUG)
-src/auth.ts:42 — BUG: token refresh fails on Safari
-  ijam, 14 days ago
-
-🟡 Medium (FIXME, HACK)
-src/utils.ts:7 — HACK: monkey-patch for IE
-  mung, 95 days ago [STALE]
-
-🟢 Low (TODO)
-[...]
-```
-
-[→ Read the full skill](./maji-todo/SKILL.md)
-
----
-
 
 ## 🧠 How `maji-mode` Works
 
