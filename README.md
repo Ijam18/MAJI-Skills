@@ -6,7 +6,7 @@
 
 Four patterns that make Claude listen the first time. Save **~75% tokens**. Ship without rework. Free.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-A88838.svg)](./LICENSE)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-A88838.svg)](./LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-8B1A1A.svg)](https://docs.claude.com/en/docs/claude-code)
 ![Methodology](https://img.shields.io/badge/Methodology-No%20Codes%2C%20Only%20Vibes-0A0A0A.svg)
 
@@ -36,7 +36,7 @@ Every Claude Code session, you're fighting the same battles:
 - ✅ **Pre-Action Gate** prevents destructive surprises (force pushes, scope creep)
 - ✅ **~75% token savings** per exchange — banned padding phrases, compression modes, table-first output
 - ✅ Works on **any project, any language, any stack**
-- ✅ Free, MIT licensed, no signup, no telemetry
+- ✅ Free, AGPL v3 (strong copyleft), no signup, no telemetry
 
 [**→ Install now**](#-installation) · [**→ See real before/after examples**](#-real-beforeafter-examples)
 
@@ -532,7 +532,7 @@ Or for project-level: `rm -rf ./.claude/skills/maji-mode`. If you appended SKILL
 <details>
 <summary><strong>Does this send any data anywhere? Telemetry?</strong></summary>
 
-No. The skill is a static markdown file Claude reads locally. Zero telemetry, zero phone-home, zero tracking. MIT licensed — read the file, you'll see.
+No. The skill is a static markdown file Claude reads locally. Zero telemetry, zero phone-home, zero tracking. AGPL v3 licensed — read the file, you'll see.
 
 </details>
 
@@ -572,7 +572,14 @@ PRs welcome. Patterns to add should be:
 
 ## 📜 License
 
-MIT — use freely, modify freely, attribute when you can. See [LICENSE](./LICENSE).
+**AGPL v3** — strong copyleft. Use, modify, redistribute freely, but:
+
+- Modifications and derivatives must also be AGPL v3
+- If you run a modified version on a network server (SaaS), users must be able to access the source
+- Cannot bundle in proprietary/closed-source products
+- Must keep copyright notice and license text
+
+See [LICENSE](./LICENSE).
 
 ---
 
