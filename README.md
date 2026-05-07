@@ -593,7 +593,6 @@ MAJI (Malaysia Artificial Joint Institute) is an Applied AI movement that builds
 
 **Origin:** Malaysia. **Audience:** anyone, anywhere.
 **Methodology:** *No Codes, Only Vibes* — we don't teach coding, we teach building.
-**License philosophy:** ship useful things, give them away, earn trust.
 
 These skills are one of those things.
 
