@@ -89,7 +89,7 @@ flowchart LR
     T5 --> To[maji-todo]
 
     style T1 fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
-    style T2 fill:#A88838,stroke:#0A0A0A,color:#FFFFFF
+    style T2 fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
     style T3 fill:#0A0A0A,stroke:#0A0A0A,color:#FFFFFF
     style T4 fill:#3A3A3A,stroke:#0A0A0A,color:#FFFFFF
     style T5 fill:#B5B5B5,stroke:#0A0A0A,color:#0A0A0A
@@ -134,8 +134,8 @@ flowchart TD
     R -.composes with.-> D
 
     style M fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
-    style C fill:#A88838,stroke:#0A0A0A,color:#FFFFFF
-    style E fill:#A88838,stroke:#0A0A0A,color:#FFFFFF
+    style C fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
+    style E fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
     style R fill:#F5F1EA,stroke:#0A0A0A
     style D fill:#F5F1EA,stroke:#0A0A0A
     style T fill:#F5F1EA,stroke:#0A0A0A
@@ -379,13 +379,13 @@ flowchart TD
     N --> C
 
     style A fill:#F5F1EA,stroke:#0A0A0A,color:#0A0A0A
-    style B fill:#A88838,stroke:#0A0A0A,color:#FFFFFF
-    style D fill:#A88838,stroke:#0A0A0A,color:#FFFFFF
+    style B fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
+    style D fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
     style F fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
     style I fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
     style M fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
     style N fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
-    style J fill:#A88838,stroke:#0A0A0A,color:#FFFFFF
+    style J fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
 ```
 
 The 4 patterns:
@@ -409,10 +409,10 @@ flowchart LR
 
     style P fill:#F5F1EA,stroke:#0A0A0A
     style M fill:#0A0A0A,stroke:#0A0A0A,color:#FFFFFF
-    style D fill:#A88838,stroke:#0A0A0A,color:#FFFFFF
+    style D fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
     style B fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
     style P2 fill:#3A3A3A,stroke:#0A0A0A,color:#FFFFFF
-    style PV fill:#A88838,stroke:#0A0A0A,color:#FFFFFF
+    style PV fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
 ```
 
 ---
