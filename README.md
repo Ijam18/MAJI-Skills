@@ -8,7 +8,7 @@ Four patterns that make Claude listen the first time. Save **~75% tokens**. Ship
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-A88838.svg)](./LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-8B1A1A.svg)](https://docs.claude.com/en/docs/claude-code)
-[![Methodology](https://img.shields.io/badge/Methodology-No%20Codes%2C%20Only%20Vibes-0A0A0A.svg)](https://maji.org)
+![Methodology](https://img.shields.io/badge/Methodology-No%20Codes%2C%20Only%20Vibes-0A0A0A.svg)
 
 [**⬇️ Install in 30 seconds**](#-installation) · [**⭐ Star this repo**](https://github.com/Ijam18/MAJI-Skills) · [**🔗 Share on LinkedIn**](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FIjam18%2FMAJI-Skills)
 
@@ -589,9 +589,11 @@ MIT — use freely, modify freely, attribute when you can. See [LICENSE](./LICEN
 
 ## 🌱 About MAJI
 
-MAJI (Malaysia Artificial Joint Institute) is an Applied AI learning movement based in Malaysia. We believe AI is the joint between people, industries, and disciplines.
+MAJI (Malaysia Artificial Joint Institute) is an Applied AI movement that builds tools, runs workshops, and ships skills for people who want to use AI as a builder — not just a consumer.
 
+**Origin:** Malaysia. **Audience:** anyone, anywhere.
 **Methodology:** *No Codes, Only Vibes* — we don't teach coding, we teach building.
+**License philosophy:** ship useful things, give them away, earn trust.
 
-Learn more: [maji.org](https://maji.org)
+These skills are one of those things.
 

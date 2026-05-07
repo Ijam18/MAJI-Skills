@@ -169,4 +169,4 @@ Common adjustments via fork:
 
 ---
 
-*`maji-explain` is part of [MAJI Skills](https://github.com/Ijam18/MAJI-Skills) · By [MAJI](https://maji.org) · No Codes, Only Vibes.*
+*`maji-explain` is part of [MAJI Skills](https://github.com/Ijam18/MAJI-Skills) · By MAJI · No Codes, Only Vibes.*

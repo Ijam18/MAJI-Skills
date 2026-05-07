@@ -147,4 +147,4 @@ When `maji-mode` is active, `maji-commit` inherits its token discipline — no p
 
 ---
 
-*`maji-commit` is part of [MAJI Skills](https://github.com/Ijam18/MAJI-Skills) · By [MAJI](https://maji.org) · No Codes, Only Vibes.*
+*`maji-commit` is part of [MAJI Skills](https://github.com/Ijam18/MAJI-Skills) · By MAJI · No Codes, Only Vibes.*
