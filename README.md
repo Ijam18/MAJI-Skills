@@ -30,13 +30,13 @@ Every Claude Code session, you're fighting the same battles:
 
 ### What you get in 30 seconds:
 
-✅ Claude recognises **outcome-first prompts** and skips the padding
-✅ **Decision modes** — discuss / build / pause / pivot — eliminate ambiguity
-✅ **Frustration signals halt Claude** instead of doubling down
-✅ **Pre-Action Gate** prevents destructive surprises (force pushes, scope creep)
-✅ **~75% token savings** per exchange — banned padding phrases, compression modes, table-first output
-✅ Works on **any project, any language, any stack**
-✅ Free, MIT licensed, no signup, no telemetry
+- ✅ Claude recognises **outcome-first prompts** and skips the padding
+- ✅ **Decision modes** — discuss / build / pause / pivot — eliminate ambiguity
+- ✅ **Frustration signals halt Claude** instead of doubling down
+- ✅ **Pre-Action Gate** prevents destructive surprises (force pushes, scope creep)
+- ✅ **~75% token savings** per exchange — banned padding phrases, compression modes, table-first output
+- ✅ Works on **any project, any language, any stack**
+- ✅ Free, MIT licensed, no signup, no telemetry
 
 [**→ Install now**](#-installation) · [**→ See real before/after examples**](#-real-beforeafter-examples)
 
