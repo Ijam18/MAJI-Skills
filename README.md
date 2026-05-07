@@ -28,8 +28,6 @@ Every Claude Code session, you're fighting the same battles:
 
 **MAJI Skills fix all of this** with a discipline layer that activates on every prompt.
 
-> *"This is the closest thing to having a senior dev who actually reads your message before responding."*
-
 ### What you get in 30 seconds:
 
 ✅ Claude recognises **outcome-first prompts** and skips the padding
@@ -41,16 +39,6 @@ Every Claude Code session, you're fighting the same battles:
 ✅ Free, MIT licensed, no signup, no telemetry
 
 [**→ Install now**](#-installation) · [**→ See real before/after examples**](#-real-beforeafter-examples)
-
----
-
-## 📖 Background
-
-A growing collection of Claude skills that make AI collaboration **tighter, faster, and less wasteful**.
-
-These skills are derived from the actual working patterns of **[Zarul Izham (Ijam)](https://www.linkedin.com/in/zarulijam/)** — Founder of MAJI — built and refined over thousands of Claude Code sessions. The patterns aren't theoretical: each one solves a real failure mode encountered when shipping daily with AI.
-
-By [MAJI](https://maji.org) · *No Codes, Only Vibes.*
 
 ---
 
@@ -226,6 +214,9 @@ After validation, decisions made based on real signal — not speculation.
 
 ## 🧠 How `maji-mode` Works
 
+<details>
+<summary>Click to expand flow diagram</summary>
+
 ```mermaid
 flowchart TD
     A[User Prompt] --> B{maji-mode<br/>active?}
@@ -272,7 +263,13 @@ The 4 patterns:
 
 ---
 
+
+</details>
+
 ## 📊 Decision Modes Visualised
+
+<details>
+<summary>Click to expand decision modes diagram</summary>
 
 ```mermaid
 flowchart LR
@@ -292,20 +289,8 @@ flowchart LR
 
 ---
 
-## 🚀 Why use these skills?
 
-| Benefit | What changes for you |
-|---|---|
-| ⚡ **Less rework** | Claude stops extrapolating wrong scope |
-| 🚄 **Faster shipping** | Outcome-first prompts get answers in 1 turn instead of 3 |
-| 💰 **Saves tokens** | Leaner exchanges = less context burned, lower API cost |
-| 🛑 **Frustration aware** | Claude halts and reconsiders when you signal "wrong direction" |
-| 🎯 **Decision modes** | Explicit discuss/build/pause/pivot — no ambiguity |
-| 🚧 **Pre-Action Gate** | Risky ops need confirmation before execution |
-| 🌐 **Universal** | Works across any project, any domain |
-| 📈 **Compounds** | Teaches you to prompt better — works even outside Claude |
-
----
+</details>
 
 ## 🎬 Real Before/After Examples
 
@@ -420,19 +405,6 @@ xychart-beta
 | Savings per exchange | — | **~75%** | **~87%** |
 | 100-message session | — | ~45,000 tokens saved | ~52,000 tokens saved |
 | Power user (5 sessions/day) | — | **~$20/day** saved on Pro tier | **~$23/day** saved |
-
-### Where the savings come from:
-
-| Source | Reduction |
-|---|---|
-| Banned padding phrases (e.g., "Great question!", "I hope this helps!") | ~10-15% |
-| Tables over bullet lists | ~5-8% |
-| No restating user's context | ~10% |
-| Single example default (not three) | ~15-20% |
-| Code comment discipline (WHY not WHAT) | ~10% (when code involved) |
-| Compression modes (`/dry`, `/jimat`, `/answer-only`) | ~30-40% additional |
-
----
 
 ## 📦 Installation
 
@@ -623,16 +595,3 @@ MAJI (Malaysia Artificial Joint Institute) is an Applied AI learning movement ba
 
 Learn more: [maji.org](https://maji.org)
 
----
-
-<div align="center">
-
-## Ready to ship faster?
-
-**Install MAJI Skills in 30 seconds. Free. No signup. MIT licensed.**
-
-[**⬇️ Install Now**](#-installation) · [**⭐ Star the Repo**](https://github.com/Ijam18/MAJI-Skills) · [**🔗 Share with a Friend**](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FIjam18%2FMAJI-Skills)
-
-*Built by builders, for builders. — MAJI*
-
-</div>
