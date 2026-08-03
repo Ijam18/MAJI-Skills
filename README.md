@@ -2,419 +2,92 @@
 
 # 🛠 MAJI Skills
 
-### **Stop repeating yourself to Claude.**
+### Most token-saving claims are guesses. We measured ours — and corrected them.
 
-Four patterns that make Claude listen the first time. **~18% shorter replies on average, ~28% on long replies** ([measured](./BENCHMARKS.md)). Ship without rework. Free.
+A small set of Claude Code skills that enforce a working discipline: say the outcome, pick a decision mode, stop when you're frustrated, confirm before anything destructive. We shipped claiming big token savings. Then we measured. The real number is smaller — and we published it.
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-0066FF.svg)](./LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-000000.svg)](https://docs.claude.com/en/docs/claude-code)
-![Measured](https://img.shields.io/badge/Impact-Measured-0066FF.svg)
-![Methodology](https://img.shields.io/badge/Methodology-No%20Codes%2C%20Only%20Vibes-000000.svg)
+[![Impact: Measured, not estimated](https://img.shields.io/badge/Impact-Measured%2C%20not%20estimated-0066FF.svg)](./BENCHMARKS.md)
 
-[**⬇️ Install in 30 seconds**](#-installation) · [**⭐ Star this repo**](https://github.com/Ijam18/MAJI-Skills) · [**🔗 Share on LinkedIn**](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FIjam18%2FMAJI-Skills)
+[**⬇️ Install**](#-install) · [**📊 Read the benchmark**](./BENCHMARKS.md) · [**🧪 The skills**](#-the-skills)
 
 </div>
 
 ---
 
-## 🎯 Why You Should Use MAJI Skills
+## The honest pitch
 
-Every Claude Code session, you're fighting the same battles:
+We originally launched claiming **75% / 87% token savings**. Those were estimates. They did not survive measurement.
 
-- 😩 Claude **extrapolates beyond what you asked** — fixes the typo AND refactors three files you didn't want touched
-- 💸 Token bills creep up because Claude responds with **paragraphs of preamble** before the actual answer
-- 🔁 You have to **re-explain your working style every session** — Claude forgets you want bullets, not essays
-- 🚨 Claude treats "let's discuss this" as "let's build it now" — and you delete 11 commits to recover
-- 😤 When you say *"that's not right"*, Claude tries variant 2, variant 3 — instead of stopping to ask what you actually want
+The real, measured impact from **29,582 Claude Code messages** over 19 days:
 
-**MAJI Skills fix all of this** with a discipline layer that activates on every prompt.
+| Metric | Measured impact |
+|---|---:|
+| Mean output tokens per message | **−18.2%** |
+| 90th-percentile (long replies) | **−28.3%** |
+| Median (typical short reply) | **−3.3%** (essentially flat) |
+| Extra reduction with Jimat mode on | −10.1% mean / −16.2% P90 |
 
-### What you get in 30 seconds:
+Full method, caveats, and the scripts that produced these numbers: **[BENCHMARKS.md](./BENCHMARKS.md)**.
 
-- ✅ Claude recognises **outcome-first prompts** and skips the padding
-- ✅ **Decision modes** — discuss / build / pause / pivot — eliminate ambiguity
-- ✅ **Frustration signals halt Claude** instead of doubling down
-- ✅ **Pre-Action Gate** prevents destructive surprises (force pushes, scope creep)
-- ✅ **Measured 18% mean / 28% on long replies** — banned padding phrases, compression modes, table-first output. See [BENCHMARKS.md](./BENCHMARKS.md) for methodology.
-- ✅ Works on **any project, any language, any stack**
-- ✅ Free, AGPL v3 (strong copyleft), no signup, no telemetry
-
-[**→ Install now**](#-installation) · [**→ See real before/after examples**](#-real-beforeafter-examples)
+So if you came for a headline token percentage, that's it: modest, real, and honestly the least interesting thing about these skills. The value is elsewhere.
 
 ---
 
-## ✨ Skills in this Repo
+## What the skills actually do well
 
-5 core skills covering the highest-frequency dev workflows — chat, explain, debug, review, commit. Plus 5 experimental skills for less-frequent use cases.
+The token math caps *verbose* replies — long answers get ~28% shorter, short ones barely move. But the reason to install this isn't the byte count. It's four failure modes it removes from your day:
 
-### Core Skills (5)
+- **Scope-drift guards.** You ask Claude to fix a typo; it refactors three files you never mentioned. A **Pre-Action Gate** forces a stop before anything destructive or scope-expanding — force pushes, branch deletes, "while I was in there" rewrites. You review before it happens, not after.
 
-| Skill | Use case | Frequency | Tier |
-|---|---|---|---|
-| **[maji-mode](./maji-mode/SKILL.md)** | Foundation discipline (every Claude session) | Always | 🔴 Tier 1 — Install first |
-| **[maji-commit](./maji-commit/SKILL.md)** | Auto-generate git commit messages | Daily | 🟠 Tier 2 — High daily value |
-| **[maji-explain](./maji-explain/SKILL.md)** | Fast layered explanations of code/concepts | Daily | 🟠 Tier 2 |
-| **[maji-debug](./maji-debug/SKILL.md)** | 5-step disciplined debug protocol | Daily | 🟡 Tier 3 — Per task |
-| **[maji-review](./maji-review/SKILL.md)** | Severity-grouped code review | Daily | 🟡 Tier 3 |
+- **Frustration detection.** When you say *"that's not right"*, default behaviour is variant 2, variant 3, variant 4. Here, a frustration signal **halts** and asks what you actually want instead of doubling down. One clean pivot beats five guesses.
 
-### Experimental Skills (5)
+- **Decision modes.** Every prompt is read as **discuss / build / pause / pivot**. "Let's proceed phase by phase" stays a *plan*, not 11 surprise commits. The ambiguity that costs you rework gets resolved up front.
 
-These exist but aren't validated by real-world use yet. See [`experimental/`](./experimental) folder.
+- **A portable, consistent discipline.** It's one plain-text file. The same operating posture rides along on **any project, any language, any stack** — and the core patterns (outcome-first, decision modes, frustration signals, banned padding) transfer to a raw system prompt too. You stop re-explaining your working style every session.
 
-`maji-test` · `maji-doc` · `maji-refactor` · `maji-summary` · `maji-todo`
-
-A skill graduates from experimental to core when daily/weekly use is proven and external feedback validates value.
-
-### Recommended Install Order
-
-```mermaid
-flowchart LR
-    T1[🔴 Tier 1<br/>Install first] --> M[maji-mode]
-    T2[🟠 Tier 2<br/>High daily value] --> C[maji-commit]
-    T2 --> E[maji-explain]
-    T3[🟡 Tier 3<br/>Per task] --> D[maji-debug]
-    T3 --> R[maji-review]
-
-    style T1 fill:#000000,stroke:#000000,color:#FFFFFF
-    style T2 fill:#0066FF,stroke:#000000,color:#FFFFFF
-    style T3 fill:#868686,stroke:#000000,color:#FFFFFF
-    style M fill:#F8F8F8,stroke:#000000
-    style C fill:#F8F8F8,stroke:#000000
-    style E fill:#F8F8F8,stroke:#000000
-    style D fill:#F8F8F8,stroke:#000000
-    style R fill:#F8F8F8,stroke:#000000
-```
-
-**Quick start:** Install Tier 1 first (`maji-mode`). Add Tier 2 within first session. Add Tier 3 within first week.
-
-### How Skills Compose
-
-`maji-mode` is the foundation. Other skills inherit its discipline (no preamble, banned phrases, action-verb endings).
-
-```mermaid
-flowchart TD
-    M([maji-mode<br/>foundation])
-    M --> C[maji-commit]
-    M --> E[maji-explain]
-    M --> D[maji-debug]
-    M --> R[maji-review]
-    R -.composes with.-> D
-
-    style M fill:#000000,stroke:#000000,color:#FFFFFF
-    style C fill:#0066FF,stroke:#000000,color:#FFFFFF
-    style E fill:#0066FF,stroke:#000000,color:#FFFFFF
-    style R fill:#F8F8F8,stroke:#000000
-    style D fill:#F8F8F8,stroke:#000000
-```
+That consistency is the actual product. The −18% is a side effect.
 
 ---
 
-### `maji-mode` — Claude Collaboration Discipline
+## Where it does *not* help (measured, stated plainly)
 
-A discipline layer between you and Claude. Activates 4 patterns that make Claude listen properly the first time — saving tokens, reducing rework, and preventing scope drift.
+- **Short Q&A** — already short, nothing to trim (median moves ~3%).
+- **Tool-call output** — JSON from tools isn't compressed.
+- **Code blocks** — code isn't re-flowed or shortened.
 
-[→ Read the full skill](./maji-mode/SKILL.md)
-
----
-
-
-### `maji-commit` — Auto-generate Commit Messages
-
-Reads your git diff and writes a clean commit message in conventional commits format. No manual typing, no overthinking the wording.
-
-```
-You stage changes → type "maji-commit" → Claude outputs:
-feat(auth): add Google OAuth flow
-```
-
-Composes with `maji-mode` for terse, no-preamble output.
-
-[→ Read the full skill](./maji-commit/SKILL.md)
+If your workload is mostly short questions or code generation, expect the discipline benefits (scope, frustration, pivots) but little token change. We'd rather you know that before installing.
 
 ---
 
+## 🧪 The skills
 
-### `maji-explain` — Fast, Layered Explanations
+**5 core** — the highest-frequency dev workflows. **5 experimental** — not yet validated by sustained real-world use.
 
-Explains code, libraries, errors, or concepts in 3 layers: 1-sentence answer → 5-bullet detail → deep-dive only on request. No "let me walk you through this".
+### Core
 
-```
-useEffect runs side effects after a React component renders,
-with optional dependency tracking.
+| Skill | What it does | Frequency |
+|---|---|---|
+| **[maji-mode](./maji-mode/SKILL.md)** | Foundation discipline: outcome-first, decision modes, frustration signals, Pre-Action Gate. Install this first. | Every session |
+| **[maji-commit](./maji-commit/SKILL.md)** | Reads your git diff, writes a conventional-commits message. | Daily |
+| **[maji-explain](./maji-explain/SKILL.md)** | Layered explanations: one-sentence answer → bullets → deep dive on request. | Daily |
+| **[maji-debug](./maji-debug/SKILL.md)** | 5-step protocol: symptom → hypothesis → verify → gate → minimum-change fix. | Per task |
+| **[maji-review](./maji-review/SKILL.md)** | Code review grouped by severity with `file:line` refs. No preamble. | Per task |
 
-Key points:
-• Fires after the DOM updates, not during render
-• Dependency array controls re-runs
-• Return a function to clean up
-• Gotcha: stale closures from missed deps
+Everything else inherits `maji-mode`'s posture (no preamble, banned padding phrases, action-verb endings), so they compose rather than conflict.
 
-Want deeper detail on dependency arrays or cleanup timing?
-```
+### Experimental
 
-[→ Read the full skill](./maji-explain/SKILL.md)
+`maji-test` · `maji-doc` · `maji-refactor` · `maji-summary` · `maji-todo` — see [`experimental/`](./experimental).
 
----
-
-
-### `maji-debug` — Disciplined Debug Protocol
-
-Turns Claude into a debug partner who slows down to think, not a guess-and-check refactor machine. 5-step protocol: read symptom → form hypothesis → verify → Pre-Action Gate → minimum-change fix.
-
-```
-SYMPTOM    TypeError on login.ts:14 — user.email undefined.
-HYPOTHESIS API response shape changed; user nested under data.
-VERIFICATION Confirmed in api/types.ts — LoginResponse wraps user.
-FIX        response.user.email → response.data.user.email
-WHY        Aligns with current type. No other consumers.
-```
-
-[→ Read the full skill](./maji-debug/SKILL.md)
+A skill graduates to core when daily/weekly use is proven **and** at least one external contribution (PR, issue, testimonial) validates it. We won't promote on speculation.
 
 ---
 
+## 📦 Install
 
-### `maji-review` — Disciplined Code Review
-
-Reviews a PR, diff, or file and outputs structured feedback grouped by severity. No "Great work overall!" preamble. No trailing "let me know if you'd like to discuss". Just findings.
-
-```
-3 findings: 🔴 2 critical, 🟡 1 important.
-
-🔴 Critical (2)
-──────────────
-src/auth.ts:3 — SQL injection via string interpolation
-src/auth.ts:4 — Plaintext password comparison
-
-🟡 Important (1)
-──────────────
-src/auth.ts:5 — Static token, not user-bound
-
-Verdict: Block merge. Fix critical findings first.
-```
-
-Composes with `maji-mode` for evidence-first output.
-
-[→ Read the full skill](./maji-review/SKILL.md)
-
----
-
----
-
-## 🧊 Status: Validation Phase
-
-The 5 core skills are frozen for **30 days of real-world validation** (started 7 May 2026). No new skills will be added during this window. Existing experimental skills stay in [`experimental/`](./experimental).
-
-A skill graduates from experimental to core when:
-- Daily/weekly use proven by repo owner
-- 1+ external contribution (PR, issue, testimonial)
-- 30+ days of validation
-
-After validation, decisions made based on real signal — not speculation.
-
----
-
-## 🧠 How `maji-mode` Works
-
-<details>
-<summary>Click to expand flow diagram</summary>
-
-```mermaid
-flowchart TD
-    A[User Prompt] --> B{maji-mode<br/>active?}
-    B -->|No| Z[Standard Claude<br/>response]
-    B -->|Yes| C[Read prompt fully]
-    C --> D{Identify<br/>Decision Mode}
-
-    D -->|Discuss| E[Plan + ask<br/>clarifying questions]
-    D -->|Build| F[Pre-Action Gate]
-    D -->|Pause| G[Stop. Wait.]
-    D -->|Pivot| H[Strip + redirect.<br/>NO iteration.]
-
-    F --> I{All 4 gate<br/>checks pass?}
-    I -->|No| J[ASK before acting]
-    I -->|Yes| K[Execute]
-
-    E --> L[Output]
-    K --> L
-    G --> L
-    H --> L
-    J --> L
-
-    L --> M{Frustration<br/>signal detected?}
-    M -->|Yes| N[STOP. Reconsider.<br/>Don't iterate.]
-    M -->|No| O[End with action verb.<br/>Offer next step.]
-    N --> C
-
-    style A fill:#F8F8F8,stroke:#000000,color:#000000
-    style B fill:#0066FF,stroke:#000000,color:#FFFFFF
-    style D fill:#0066FF,stroke:#000000,color:#FFFFFF
-    style F fill:#000000,stroke:#000000,color:#FFFFFF
-    style I fill:#000000,stroke:#000000,color:#FFFFFF
-    style M fill:#000000,stroke:#000000,color:#FFFFFF
-    style N fill:#000000,stroke:#000000,color:#FFFFFF
-    style J fill:#0066FF,stroke:#000000,color:#FFFFFF
-```
-
-The 4 patterns:
-
-1. **Outcome before context** — say what you want, Claude responds; rationale optional
-2. **Mode-tagged prompts** — discuss / build / pause / pivot — Claude treats them differently
-3. **Frustration recognition** — when you signal "wrong direction", Claude halts instead of doubling down
-4. **Pre-action confirmation** — destructive or scope-expanding actions need explicit OK
-
----
-
-
-</details>
-
-## 📊 Decision Modes Visualised
-
-<details>
-<summary>Click to expand decision modes diagram</summary>
-
-```mermaid
-flowchart LR
-    P[User Prompt] --> M{Decision Mode}
-    M -->|"discuss first<br/>propose plan<br/>what do you think"| D[💬 DISCUSS<br/>Plan + clarify]
-    M -->|"proceed<br/>ship<br/>approve"| B[⚙️ BUILD<br/>Execute]
-    M -->|"hold on<br/>wait<br/>pause"| P2[⏸️ PAUSE<br/>Stop & wait]
-    M -->|"drop X<br/>start over<br/>change direction"| PV[🔄 PIVOT<br/>Strip + redirect]
-
-    style P fill:#F8F8F8,stroke:#000000
-    style M fill:#000000,stroke:#000000,color:#FFFFFF
-    style D fill:#0066FF,stroke:#000000,color:#FFFFFF
-    style B fill:#000000,stroke:#000000,color:#FFFFFF
-    style P2 fill:#868686,stroke:#000000,color:#FFFFFF
-    style PV fill:#0066FF,stroke:#000000,color:#FFFFFF
-```
-
----
-
-
-</details>
-
-## 🎬 Real Before/After Examples
-
-<details>
-<summary><strong>📌 Example 1 — Building a Feature</strong></summary>
-
-```mermaid
-sequenceDiagram
-    actor U as User
-    participant C as Claude
-    rect rgb(245, 220, 220)
-    Note over U,C: WITHOUT maji-mode
-    U->>C: "Hey, I'm thinking maybe we could add a<br/>search feature, what do you think?"
-    C->>U: "Great idea! Several considerations:<br/>algorithms, indexing... should I explore first?"
-    U->>C: "Sure, I guess..."
-    C->>U: "I found these options... which sounds best?"
-    Note over U,C: 3 messages, nothing shipped
-    end
-
-    rect rgb(220, 245, 220)
-    Note over U,C: WITH maji-mode
-    U->>C: "Add search to dashboard. Discuss first."
-    C->>U: "Client-side filter or full-text DB?<br/>Recommend client-side. Approve?"
-    U->>C: "Approve"
-    C->>U: ✅ Implementation done
-    end
-```
-
-**Saved:** ~1500 tokens, 3 round-trips, mental overhead.
-
-</details>
-
-<details>
-<summary><strong>📌 Example 2 — The "Proceed" Trap</strong></summary>
-
-**Without maji-mode**
-> User: *"Let's proceed phase by phase, plan stories and epics"*
-> Claude: *[scaffolds 10 stories, runs npm install, commits 11 times]*
-> User: *"Wait, what are you doing?"* → has to delete everything.
-
-**With maji-mode**
-> User: *"Let's proceed phase by phase, plan stories and epics"*
-> Claude: *"Reading 'proceed' in discussion context — continuing to plan, not building yet."*
-> No surprise commits.
-
-**Saved:** ~3 hours and a deleted repo.
-
-</details>
-
-<details>
-<summary><strong>📌 Example 3 — Aesthetic Mismatch</strong></summary>
-
-**Without maji-mode**
-> User: *"That doesn't look right"*
-> Claude: *"Let me try a different color scheme..."* [makes 5 changes]
-> User: *"Still wrong"*
-> Claude: *"Let me try yet another approach..."* [user rage-quits]
-
-**With maji-mode**
-> User: *"Not the right vibe"*
-> Claude: *"STOP — pivoting completely instead of iterating. Show me 1-2 reference sites with the look you want, or describe in 5 words."*
-> User: *"Linear style — minimal, dark, generous spacing"* → clean pivot.
-
-**Saved:** Massive frustration + 5+ wasted attempts.
-
-</details>
-
-<details>
-<summary><strong>📌 Example 4 — Destructive Action</strong></summary>
-
-**Without maji-mode**
-> User: *"Clean up old branches"*
-> Claude: *[force-deletes branches, resets remote tracking, some unmerged work disappears]*
-
-**With maji-mode**
-> User: *"Clean up old branches"*
-> Claude: *"Pre-Action Gate: destructive op detected. Found 12 branches. Show list before delete?"*
-> User reviews → surgical cleanup, no surprise loss.
-
-**Saved:** Lost work prevention. Trust preserved.
-
-</details>
-
-<details>
-<summary><strong>📌 Example 5 — Token Burn</strong></summary>
-
-**Without maji-mode** (~200 tokens of padding alone)
-> "Great question! That's a really thoughtful approach. Let me think through this carefully and consider the various angles. I appreciate you bringing this up. Here's what I'm thinking..."
-
-**With maji-mode**
-> "3 options. Recommend (b). Reason: ships fastest. [table]"
-
-**Saved:** Across 50 messages = ~10,000 tokens = real $.
-
-</details>
-
----
-
-## 💸 Token Economy Math — Measured
-
-These numbers come from 29,582 real Claude Code messages over 19 days. Not estimates. See [BENCHMARKS.md](./BENCHMARKS.md).
-
-```mermaid
-xychart-beta
-    title "Mean output tokens per assistant message"
-    x-axis ["Before skills", "After skills (default)", "After skills (jimat)"]
-    y-axis "Tokens" 0 --> 1000
-    bar [950, 789, 709]
-```
-
-| Item | Before skills | After skills (default) | After skills (jimat on) |
-|---|---|---|---|
-| Mean output tokens | ~950 | ~789 | ~709 |
-| Reduction vs before | — | **~18% mean / ~28% on long replies** | **+10% additional** |
-| Where the win is | — | Long multi-paragraph answers | Multi-paragraph + heavy tasks |
-| Where it does **not** help | — | Short Q&A · tool calls · code blocks | Short Q&A · tool calls · code blocks |
-
-> **Honest note.** Earlier README versions claimed up to 75% / 87%. Those were estimates that did not survive measurement. Real-world impact is meaningful but smaller — the skills cap verbose replies rather than shrink short ones.
-
-## 📦 Installation
-
-<details>
-<summary><strong>Option 1 — User-level (recommended, applies to all projects)</strong></summary>
+**Recommended — user-level (applies to every project):**
 
 ```bash
 mkdir -p ~/.claude/skills
@@ -422,10 +95,7 @@ git clone https://github.com/Ijam18/MAJI-Skills.git
 cp -r MAJI-Skills/maji-mode ~/.claude/skills/
 ```
 
-</details>
-
-<details>
-<summary><strong>Option 2 — Project-level (single project only)</strong></summary>
+**Project-level (single repo):**
 
 ```bash
 mkdir -p ./.claude/skills
@@ -433,172 +103,55 @@ git clone https://github.com/Ijam18/MAJI-Skills.git
 cp -r MAJI-Skills/maji-mode ./.claude/skills/
 ```
 
-</details>
-
-<details>
-<summary><strong>Option 3 — Always-on (loaded every session, every project)</strong></summary>
-
-Append the contents of `maji-mode/SKILL.md` to your `~/.claude/CLAUDE.md` file:
+**Always-on (loaded every session):** append `maji-mode/SKILL.md` to `~/.claude/CLAUDE.md`.
 
 ```bash
 git clone https://github.com/Ijam18/MAJI-Skills.git
 cat MAJI-Skills/maji-mode/SKILL.md >> ~/.claude/CLAUDE.md
 ```
 
-</details>
+Then start a session and type `/maji-mode` (or let user-level skill discovery auto-load it).
+
+**Uninstall:** `rm -rf ~/.claude/skills/maji-mode` (or remove the appended section from `CLAUDE.md`). No telemetry, no phone-home — it's a static markdown file Claude reads locally.
 
 ---
 
-## ▶️ Usage
+## Why you can trust the numbers
 
-After installation, invoke at the start of any Claude Code session:
+Three reasons, all checkable:
 
-```
-/maji-mode
-```
+1. **We published the measurement pipeline.** Two scripts (`parse.py`, `analyze.py`) plus `methodology.md`, AGPL-licensed alongside the skills. They read your local `~/.claude/projects/` logs, write a Parquet table and a `summary.json`, and never send data anywhere (`parse.py --anonymise-projects` even strips project names). You can **reproduce your own before/after** in about two weeks of normal use. See [BENCHMARKS.md § Reproducing the numbers](./BENCHMARKS.md#reproducing-the-numbers).
 
-Or it auto-activates via Claude's skill discovery if installed at user-level.
+2. **We corrected our own overclaim in public.** The 75%/87% figures are gone, replaced with −18% / −28% and a versioned changelog explaining why. The benchmark lists its own caveats first: no true control group, one user, one period, cohort sizes differ, `output_tokens` includes uncompressible code and tool calls.
 
-To verify it's active, your prompts should feel:
-- More direct (less preamble)
-- Better at scope (Claude asks before extrapolating)
-- Token-aware (shorter responses by default)
+3. **We show the deployment footprint honestly labelled.** Since activation the skills have run continuously across the maintainer's real workload — **3,502 sessions, 145 projects, 164,668 messages, ~48.84B tokens** (28 May – 3 Aug 2026). We call that what it is: **scale-of-deployment evidence, not a controlled comparison.** It proves the discipline is livable day-to-day at scale; it does not re-prove the −18%. Both matter; we don't blur them.
+
+Disclosure: the benchmark author is also the maintainer, measuring their own logs. Independent replication is welcome — open a PR with your `summary.json` and we'll aggregate community data over time (see [ROADMAP.md](./ROADMAP.md)).
 
 ---
 
-## 👥 Who benefits most
+## Who this is for
 
-| User type | Benefit fit |
-|---|---|
-| 🚀 Solo founders + indie hackers | High |
-| 🌊 Vibe-coders (no formal CS) | **Highest** |
-| 👨‍💻 Senior devs using AI as pair programmer | High |
-| 🎨 Designers using Claude for code | High |
-| 🎓 Teaching contexts | High |
-| 🛠 Casual / weekend tinkerers | Lower (overhead may exceed benefit) |
+Solo founders, indie hackers, vibe-coders, and senior devs using Claude as a pair programmer — anyone who loses more time to scope creep and re-explaining their style than to raw token count. Casual weekend tinkerers may find the overhead exceeds the benefit; that's a fair call to make.
 
 ---
 
-## ❓ FAQ
+## Contributing
 
-<details>
-<summary><strong>How do I verify maji-mode is actually active?</strong></summary>
-
-After install, type `verify maji-mode` in your Claude Code session. You should get a one-line confirmation showing 4 active patterns + current compression mode. If Claude responds with generic text instead, the skill isn't loaded — re-check install path.
-
-</details>
-
-<details>
-<summary><strong>Does this slow Claude down?</strong></summary>
-
-No. The patterns reduce response length, which means Claude streams faster. You'll feel it especially on `/dry` and `/jimat` modes.
-
-</details>
-
-<details>
-<summary><strong>Will this work with Cursor / Continue / other AI tools?</strong></summary>
-
-The skill format is Claude Code-specific, but **the patterns are universal**. Copy `maji-mode/SKILL.md` content into Cursor's `.cursor/rules` or Continue's system prompt and most patterns transfer. Decision modes, frustration signals, and banned phrases work with any LLM.
-
-</details>
-
-<details>
-<summary><strong>Can I customize the patterns? I want some but not others.</strong></summary>
-
-Yes — `maji-mode/SKILL.md` is just text. Fork the repo, edit the file, install your version. Common customizations:
-
-- Remove banned phrases you don't mind (some users like "Great question!")
-- Adjust compression default (some prefer slightly more verbose by default)
-- Add your own magic phrases vocabulary
-- Translate to your language
-
-</details>
-
-<details>
-<summary><strong>Does this work on Claude Pro / Max / API?</strong></summary>
-
-Works on any tier that supports Claude Code skills. Token savings matter most on metered API or hitting Pro tier limits — that's where the measured ~18% (and up to ~28% on long replies) compounds into real $$$ over months of use.
-
-</details>
-
-<details>
-<summary><strong>How do I uninstall?</strong></summary>
-
-Delete the skill folder:
-
-```bash
-rm -rf ~/.claude/skills/maji-mode
-```
-
-Or for project-level: `rm -rf ./.claude/skills/maji-mode`. If you appended SKILL.md to your `~/.claude/CLAUDE.md`, edit that file to remove the section.
-
-</details>
-
-<details>
-<summary><strong>Does this send any data anywhere? Telemetry?</strong></summary>
-
-No. The skill is a static markdown file Claude reads locally. Zero telemetry, zero phone-home, zero tracking. AGPL v3 licensed — read the file, you'll see.
-
-</details>
-
-<details>
-<summary><strong>What if I miss the friendly tone?</strong></summary>
-
-The patterns reduce padding but Claude still gives quality answers. If you want some warmth back, invoke compression less aggressively — skip `/jimat` mode and stick with default. Or fork and adjust the banned phrases list to allow some pleasantries.
-
-</details>
-
-<details>
-<summary><strong>Will this conflict with my other skills?</strong></summary>
-
-Generally no — `maji-mode` defines response posture, not domain logic. It composes well with other skills (e.g., a code-review skill, a documentation skill). If you hit conflicts, file an issue with details.
-
-</details>
-
-<details>
-<summary><strong>I tried it and it feels too tight. What now?</strong></summary>
-
-Two options: (1) skip compression modes (`/dry`, `/jimat`) — default `maji-mode` is already terse but still readable. (2) Fork and remove the strict token discipline section — keep just the 4 patterns (outcome-first, decision modes, frustration signals, Pre-Action Gate) without banned phrases.
-
-</details>
+PRs welcome. A pattern earns a place if it's **universal** (not tied to one project/language), **token-neutral-or-positive**, **explainable in two sentences**, and **backed by a real failure mode it prevents**. Bonus points for a `summary.json` showing measured effect. See [ROADMAP.md](./ROADMAP.md) for where this is headed.
 
 ---
 
-## 🤝 Contributing
+## License
 
-PRs welcome. Patterns to add should be:
-
-- ✅ Universal (not specific to one project / language / domain)
-- ✅ Token-positive (saves tokens, doesn't cost more)
-- ✅ Easy to explain in 1-2 sentences
-- ✅ Backed by a real failure mode the pattern prevents
+**AGPL v3** — strong copyleft. Use, modify, and redistribute freely; derivatives and network-served modifications must also be AGPL v3 and source-available. See [LICENSE](./LICENSE).
 
 ---
 
-## 📜 License
+## About MAJI
 
-**AGPL v3** — strong copyleft. Use, modify, redistribute freely, but:
+MAJI (Malaysia Artificial Joint Institute) is an applied-AI movement that ships tools and teaches building over consuming. Origin: Malaysia. Audience: anyone, anywhere.
 
-- Modifications and derivatives must also be AGPL v3
-- If you run a modified version on a network server (SaaS), users must be able to access the source
-- Cannot bundle in proprietary/closed-source products
-- Must keep copyright notice and license text
+→ LinkedIn: [Zarul Izham (Ijam)](https://www.linkedin.com/in/zarulijam/) · Threads: [@_zarulijam](https://www.threads.com/@_zarulijam)
 
-See [LICENSE](./LICENSE).
-
----
-
-## 🌱 About MAJI · Connect
-
-MAJI (Malaysia Artificial Joint Institute) is an Applied AI movement that builds tools, runs workshops, and ships skills for people who want to use AI as a builder — not just a consumer.
-
-**Origin:** Malaysia. **Audience:** anyone, anywhere.
-**Methodology:** *No Codes, Only Vibes* — we don't teach coding, we teach building.
-
-Questions, feedback, or sharing your experience? DMs open:
-
-→ **LinkedIn:** [Zarul Izham (Ijam)](https://www.linkedin.com/in/zarulijam/)
-→ **Threads:** [@_zarulijam](https://www.threads.com/@_zarulijam)
-
-Tag the repo when sharing — happy to feature builders using `maji-mode` in the wild.
-
+Tag the repo when you share it — happy to feature builders using `maji-mode` in the wild.
