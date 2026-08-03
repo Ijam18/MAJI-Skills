@@ -5,7 +5,7 @@ description: A Claude collaboration discipline. Lead with outcome+constraint, id
 
 # maji-mode — Claude Collaboration Discipline
 
-A discipline layer between you and Claude. Activates 4 patterns that make Claude listen properly the first time — saving tokens, reducing rework, and preventing scope drift.
+A discipline layer between you and Claude. Activates 4 patterns that make Claude listen properly the first time — preventing scope drift, catching frustration early, and cutting rework. (Measured token effect is modest — see [BENCHMARKS.md](../BENCHMARKS.md).)
 
 ---
 
