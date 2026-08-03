@@ -5,3 +5,9 @@ node_modules
 .env.local
 .vscode
 .idea
+
+# analytics outputs (contain real message content — never commit)
+analytics/messages.parquet
+analytics/summary.json
+analytics/charts/
+**/__pycache__/

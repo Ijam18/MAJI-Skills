@@ -4,11 +4,12 @@
 
 ### **Stop repeating yourself to Claude.**
 
-Four patterns that make Claude listen the first time. Save **~75% tokens**. Ship without rework. Free.
+Four patterns that make Claude listen the first time. **~18% shorter replies on average, ~28% on long replies** ([measured](./BENCHMARKS.md)). Ship without rework. Free.
 
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-A88838.svg)](./LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-8B1A1A.svg)](https://docs.claude.com/en/docs/claude-code)
-![Methodology](https://img.shields.io/badge/Methodology-No%20Codes%2C%20Only%20Vibes-0A0A0A.svg)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-0066FF.svg)](./LICENSE)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-000000.svg)](https://docs.claude.com/en/docs/claude-code)
+![Measured](https://img.shields.io/badge/Impact-Measured-0066FF.svg)
+![Methodology](https://img.shields.io/badge/Methodology-No%20Codes%2C%20Only%20Vibes-000000.svg)
 
 [**⬇️ Install in 30 seconds**](#-installation) · [**⭐ Star this repo**](https://github.com/Ijam18/MAJI-Skills) · [**🔗 Share on LinkedIn**](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2FIjam18%2FMAJI-Skills)
 
@@ -34,7 +35,7 @@ Every Claude Code session, you're fighting the same battles:
 - ✅ **Decision modes** — discuss / build / pause / pivot — eliminate ambiguity
 - ✅ **Frustration signals halt Claude** instead of doubling down
 - ✅ **Pre-Action Gate** prevents destructive surprises (force pushes, scope creep)
-- ✅ **~75% token savings** per exchange — banned padding phrases, compression modes, table-first output
+- ✅ **Measured 18% mean / 28% on long replies** — banned padding phrases, compression modes, table-first output. See [BENCHMARKS.md](./BENCHMARKS.md) for methodology.
 - ✅ Works on **any project, any language, any stack**
 - ✅ Free, AGPL v3 (strong copyleft), no signup, no telemetry
 
@@ -74,14 +75,14 @@ flowchart LR
     T3[🟡 Tier 3<br/>Per task] --> D[maji-debug]
     T3 --> R[maji-review]
 
-    style T1 fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
-    style T2 fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
-    style T3 fill:#0A0A0A,stroke:#0A0A0A,color:#FFFFFF
-    style M fill:#F5F1EA,stroke:#0A0A0A
-    style C fill:#F5F1EA,stroke:#0A0A0A
-    style E fill:#F5F1EA,stroke:#0A0A0A
-    style D fill:#F5F1EA,stroke:#0A0A0A
-    style R fill:#F5F1EA,stroke:#0A0A0A
+    style T1 fill:#000000,stroke:#000000,color:#FFFFFF
+    style T2 fill:#0066FF,stroke:#000000,color:#FFFFFF
+    style T3 fill:#868686,stroke:#000000,color:#FFFFFF
+    style M fill:#F8F8F8,stroke:#000000
+    style C fill:#F8F8F8,stroke:#000000
+    style E fill:#F8F8F8,stroke:#000000
+    style D fill:#F8F8F8,stroke:#000000
+    style R fill:#F8F8F8,stroke:#000000
 ```
 
 **Quick start:** Install Tier 1 first (`maji-mode`). Add Tier 2 within first session. Add Tier 3 within first week.
@@ -99,11 +100,11 @@ flowchart TD
     M --> R[maji-review]
     R -.composes with.-> D
 
-    style M fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
-    style C fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
-    style E fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
-    style R fill:#F5F1EA,stroke:#0A0A0A
-    style D fill:#F5F1EA,stroke:#0A0A0A
+    style M fill:#000000,stroke:#000000,color:#FFFFFF
+    style C fill:#0066FF,stroke:#000000,color:#FFFFFF
+    style E fill:#0066FF,stroke:#000000,color:#FFFFFF
+    style R fill:#F8F8F8,stroke:#000000
+    style D fill:#F8F8F8,stroke:#000000
 ```
 
 ---
@@ -244,14 +245,14 @@ flowchart TD
     M -->|No| O[End with action verb.<br/>Offer next step.]
     N --> C
 
-    style A fill:#F5F1EA,stroke:#0A0A0A,color:#0A0A0A
-    style B fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
-    style D fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
-    style F fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
-    style I fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
-    style M fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
-    style N fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
-    style J fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
+    style A fill:#F8F8F8,stroke:#000000,color:#000000
+    style B fill:#0066FF,stroke:#000000,color:#FFFFFF
+    style D fill:#0066FF,stroke:#000000,color:#FFFFFF
+    style F fill:#000000,stroke:#000000,color:#FFFFFF
+    style I fill:#000000,stroke:#000000,color:#FFFFFF
+    style M fill:#000000,stroke:#000000,color:#FFFFFF
+    style N fill:#000000,stroke:#000000,color:#FFFFFF
+    style J fill:#0066FF,stroke:#000000,color:#FFFFFF
 ```
 
 The 4 patterns:
@@ -279,12 +280,12 @@ flowchart LR
     M -->|"hold on<br/>wait<br/>pause"| P2[⏸️ PAUSE<br/>Stop & wait]
     M -->|"drop X<br/>start over<br/>change direction"| PV[🔄 PIVOT<br/>Strip + redirect]
 
-    style P fill:#F5F1EA,stroke:#0A0A0A
-    style M fill:#0A0A0A,stroke:#0A0A0A,color:#FFFFFF
-    style D fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
-    style B fill:#8B1A1A,stroke:#0A0A0A,color:#FFFFFF
-    style P2 fill:#3A3A3A,stroke:#0A0A0A,color:#FFFFFF
-    style PV fill:#A88838,stroke:#0A0A0A,color:#0A0A0A
+    style P fill:#F8F8F8,stroke:#000000
+    style M fill:#000000,stroke:#000000,color:#FFFFFF
+    style D fill:#0066FF,stroke:#000000,color:#FFFFFF
+    style B fill:#000000,stroke:#000000,color:#FFFFFF
+    style P2 fill:#868686,stroke:#000000,color:#FFFFFF
+    style PV fill:#0066FF,stroke:#000000,color:#FFFFFF
 ```
 
 ---
@@ -389,22 +390,26 @@ sequenceDiagram
 
 ---
 
-## 💸 Token Economy Math
+## 💸 Token Economy Math — Measured
+
+These numbers come from 29,582 real Claude Code messages over 19 days. Not estimates. See [BENCHMARKS.md](./BENCHMARKS.md).
 
 ```mermaid
 xychart-beta
-    title "Token Cost Per Session"
-    x-axis ["Without maji-mode", "With maji-mode", "+ /jimat mode"]
-    y-axis "Tokens per exchange" 0 --> 700
-    bar [600, 150, 80]
+    title "Mean output tokens per assistant message"
+    x-axis ["Before skills", "After skills (default)", "After skills (jimat)"]
+    y-axis "Tokens" 0 --> 1000
+    bar [950, 789, 709]
 ```
 
-| Item | Without `maji-mode` | With `maji-mode` | + `/jimat` mode |
+| Item | Before skills | After skills (default) | After skills (jimat on) |
 |---|---|---|---|
-| Avg prompt+response | ~600 tokens | ~150 tokens | ~80 tokens |
-| Savings per exchange | — | **~75%** | **~87%** |
-| 100-message session | — | ~45,000 tokens saved | ~52,000 tokens saved |
-| Power user (5 sessions/day) | — | **~$20/day** saved on Pro tier | **~$23/day** saved |
+| Mean output tokens | ~950 | ~789 | ~709 |
+| Reduction vs before | — | **~18% mean / ~28% on long replies** | **+10% additional** |
+| Where the win is | — | Long multi-paragraph answers | Multi-paragraph + heavy tasks |
+| Where it does **not** help | — | Short Q&A · tool calls · code blocks | Short Q&A · tool calls · code blocks |
+
+> **Honest note.** Earlier README versions claimed up to 75% / 87%. Those were estimates that did not survive measurement. Real-world impact is meaningful but smaller — the skills cap verbose replies rather than shrink short ones.
 
 ## 📦 Installation
 
@@ -512,7 +517,7 @@ Yes — `maji-mode/SKILL.md` is just text. Fork the repo, edit the file, install
 <details>
 <summary><strong>Does this work on Claude Pro / Max / API?</strong></summary>
 
-Works on any tier that supports Claude Code skills. Token savings matter most on metered API or hitting Pro tier limits — that's where the 75% reduction translates to real $$$.
+Works on any tier that supports Claude Code skills. Token savings matter most on metered API or hitting Pro tier limits — that's where the measured ~18% (and up to ~28% on long replies) compounds into real $$$ over months of use.
 
 </details>
 
