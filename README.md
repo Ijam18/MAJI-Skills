@@ -139,7 +139,7 @@ Solo founders, indie hackers, vibe-coders, and senior devs using Claude as a pai
 
 ## Contributing
 
-PRs welcome. A pattern earns a place if it's **universal** (not tied to one project/language), **token-neutral-or-positive**, **explainable in two sentences**, and **backed by a real failure mode it prevents**. Bonus points for a `summary.json` showing measured effect. See [ROADMAP.md](./ROADMAP.md) for where this is headed.
+PRs welcome. A pattern earns a place if it's **universal** (not tied to one project/language), **token-neutral-or-positive**, **explainable in two sentences**, and **backed by a real failure mode it prevents**. Bonus points for a `summary.json` showing measured effect — see [CONTRIBUTING-BENCHMARKS.md](./CONTRIBUTING-BENCHMARKS.md). Where this is headed: [ROADMAP.md](./ROADMAP.md).
 
 ---
 

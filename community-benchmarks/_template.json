@@ -1,0 +1,15 @@
+{
+  "_comment": "Rename this to <your-handle>.json and drop it in community-benchmarks/. The cohort + mode blocks are exactly what analytics/analyze.py writes as summary.json — paste them in. Add contributor / window / note yourself. Files starting with _ are ignored by aggregate.py. If you have no pre-skills history, drop the cohort block and keep mode — the jimat-vs-default delta still counts.",
+  "contributor": "your-github-handle-or-anon-id",
+  "window": "1 Jun - 15 Jun 2026",
+  "note": "mostly TS/React work; jimat toggled on heavy days",
+  "skills_launch": "2026-06-01",
+  "cohort": {
+    "pre":  {"n_messages": 0, "median_output": 0, "mean_output": 0, "p90_output": 0, "total_output": 0, "total_input": 0},
+    "post": {"n_messages": 0, "median_output": 0, "mean_output": 0, "p90_output": 0, "total_output": 0, "total_input": 0}
+  },
+  "mode": {
+    "default": {"n_messages": 0, "median_output": 0, "mean_output": 0, "p90_output": 0, "total_output": 0},
+    "jimat":   {"n_messages": 0, "median_output": 0, "mean_output": 0, "p90_output": 0, "total_output": 0}
+  }
+}
