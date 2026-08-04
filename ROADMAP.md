@@ -17,7 +17,7 @@ This roadmap is about what comes after the correction. The bet: **the honesty is
 | External contributions | 0 |
 | Benchmark sample | n = 1 user, 1 period |
 | Maintainer footprint | 3,502 sessions · 145 projects · ~48.84B tokens (28 May – 3 Aug 2026) |
-| Skills | 5 core, 5 experimental |
+| Skills | 6 core, 5 experimental |
 | Last commit before revival | May 2026 |
 
 Two facts sit in tension and both are true: the skills are **heavily used by one person** (real, sustained, 2.5-month deployment) and **barely validated by anyone else** (n=1, single-digit forks). The whole roadmap is about closing that second gap without ever reopening the first mistake.
