@@ -62,16 +62,16 @@ The honest reframe: **MAJI Skills is a portable working discipline for Claude Co
 
 Every figure currently rests on one person's logs. The highest-leverage move is turning `n=1` into aggregated, honest, multi-user data — and the pipeline already exists ([`analytics/`](./analytics)), privacy-safe by design: it reads only `~/.claude/projects/` locally, `summary.json` contains **aggregate statistics only (no message text)**, and `parse.py --anonymise-projects` strips project names.
 
-- Add `CONTRIBUTING-BENCHMARKS.md` (docs only): install → use normally 2+ weeks → run `parse.py` + `analyze.py` → PR your `summary.json`.
-- Accept `summary.json` files into a `community-benchmarks/` folder. Each keeps its own sample size and caveats. **No averaging away the disagreement** — if someone measures +5% (skills made them *more* verbose), that entry stays visible.
+- ✅ **Shipped:** [`CONTRIBUTING-BENCHMARKS.md`](./CONTRIBUTING-BENCHMARKS.md) — install → use ~2 weeks → run `parse.py` + `analyze.py` → PR your `summary.json`.
+- ✅ **Shipped:** [`community-benchmarks/`](./community-benchmarks) accepts one `summary.json` per contributor (with `_template.json`). Each keeps its sample size + caveats. **No averaging away the disagreement** — a +5% run (skills made them *more* verbose) stays visible.
 - Realistic bar: even **3–5 external `summary.json` files** moves this from "one guy's logs" to "a small honest dataset" — a claim almost no competing repo can make.
 
 ### 2. A "community benchmarks" aggregation (the honest-proof artifact)
 
-Once contributions exist:
+**✅ Built** — the aggregator and its output file exist now (empty until contributions land). Once runs come in:
 
 - A generated `COMMUNITY-BENCHMARKS.md` listing every contributed run as a row (anon id, sample size, window, mean/median/P90 delta, mode) plus a whole-dataset roll-up with `N contributors`, `total messages`, and the **spread** (min/max, not just mean).
-- A small `analytics/aggregate.py` that reads `community-benchmarks/*.json` and emits the table + a distribution chart.
+- ✅ **Shipped:** [`analytics/aggregate.py`](./analytics/aggregate.py) (standard-library only) reads `community-benchmarks/*.json` and regenerates [COMMUNITY-BENCHMARKS.md](./COMMUNITY-BENCHMARKS.md) with a per-run table + roll-up (spread, not just mean).
 - The roll-up is allowed to be unflattering. That unflinching table *is* the marketing asset: **"the AI-skills repo that publishes its community's real numbers, including the bad ones."**
 
 ### 3. Skill polish (small, earned, no bloat)
