@@ -17,11 +17,11 @@ Type `maji-todo <target>` where target is:
 - Subfolder (`maji-todo src/`)
 - Specific file (`maji-todo src/auth.ts`)
 
-Optional flags:
+Optional filters — just ask in plain language (this is a skill, not a CLI):
 
-- `--stale` — only show TODOs older than 30 days (via git blame)
-- `--owner <name>` — filter by author
-- `--type <TODO|FIXME|HACK>` — filter by tag
+- "only stale ones" — items whose line was **last edited** > 30 days ago (via `git blame`)
+- "by <author>" — filter by the author `git blame` last attributes
+- "FIXME only" / "just the HACKs" — filter by tag
 
 ---
 
@@ -45,7 +45,7 @@ Optional flags:
 - File:line
 - Comment text
 - Author (via git blame)
-- Age (days since first introduced)
+- Last touched (days since the line was last edited, via `git blame` — approximate; `git blame` reports the last edit, not when the comment was first introduced)
 
 ---
 

@@ -63,13 +63,14 @@ If your workload is mostly short questions or code generation, expect the discip
 
 ## 🧪 The skills
 
-**5 core** — the highest-frequency dev workflows. **5 experimental** — not yet validated by sustained real-world use.
+**6 core** — the highest-frequency dev workflows. **5 experimental** — not yet validated by sustained real-world use.
 
 ### Core
 
 | Skill | What it does | Frequency |
 |---|---|---|
 | **[maji-mode](./maji-mode/SKILL.md)** | Foundation discipline: outcome-first, decision modes, frustration signals, Pre-Action Gate. Install this first. | Every session |
+| **[maji-jimat](./maji-jimat/SKILL.md)** | Token economy: strips filler + graduated compression (`jimat` / `dry` / `answer-only`). Where the measured token savings actually come from. | Every session |
 | **[maji-commit](./maji-commit/SKILL.md)** | Reads your git diff, writes a conventional-commits message. | Daily |
 | **[maji-explain](./maji-explain/SKILL.md)** | Layered explanations: one-sentence answer → bullets → deep dive on request. | Daily |
 | **[maji-debug](./maji-debug/SKILL.md)** | 5-step protocol: symptom → hypothesis → verify → gate → minimum-change fix. | Per task |
