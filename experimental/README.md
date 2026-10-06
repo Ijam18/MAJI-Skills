@@ -24,6 +24,7 @@ Until then, they live here.
 | **[maji-refactor](./maji-refactor/SKILL.md)** | Scope-guarded refactoring | Occasional use only |
 | **[maji-summary](./maji-summary/SKILL.md)** | Long content compression | Overlaps with default Claude behaviour |
 | **[maji-todo](./maji-todo/SKILL.md)** | Codebase TODO triage | Sprint-level frequency only |
+| **[maji-outreach](./maji-outreach/SKILL.md)** | Outbound outreach and partner targeting | New; not yet validated outside one owner |
 
 ## Installation
 

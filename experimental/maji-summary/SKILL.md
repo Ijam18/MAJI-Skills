@@ -121,7 +121,7 @@ MAJI OS is a browser-based PWA learning OS combining W3Schools content, macOS ae
 KEY POINTS
 1. Stack: Next.js + Supabase + Vercel; domain maji.org
 2. MVP scope: 9 apps + auth + PWA + 1 course
-3. Soft launch ~9 June, validates with SEMASHUR cohort
+3. Soft launch ~9 June, validates with a pilot cohort
 ```
 
 ---
