@@ -1,0 +1,22 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Lint skills and links
+        run: node scripts/lint-skills.mjs
+      - name: AGENTS.md index is up to date
+        run: node scripts/build-index.mjs --check
+      - name: setup.sh links every skill
+        run: |
+          mkdir -p /tmp/agent && cp -R . /tmp/agent/.maji-skills
+          bash /tmp/agent/.maji-skills/scripts/setup.sh /tmp/agent
+          test "$(ls /tmp/agent/.agents/skills | wc -l)" -eq "$(ls .agents/skills | wc -l)"

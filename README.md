@@ -2,181 +2,127 @@
 
 # 🛠 MAJI Skills
 
-### Most token-saving claims are guesses. We measured ours — and corrected them.
+### A plug-and-play skill kit for your AI agent. Clone it, open it, and your agent works the way we do.
 
-A small set of Claude Code skills that enforce a working discipline: say the outcome, pick a decision mode, stop when you're frustrated, confirm before anything destructive. We shipped claiming big token savings. Then we measured. The real number is smaller — and we published it.
+One working discipline plus playbooks distilled from real, repeated work: planning, shipping, PDFs, images, video, social media and sales. Works in Claude Code, Cursor, Antigravity, Codex and Gemini CLI. Your agent learns your context and grows its own skills from your work.
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-0066FF.svg)](./LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-000000.svg)](https://docs.claude.com/en/docs/claude-code)
-[![Impact: Measured, not estimated](https://img.shields.io/badge/Impact-Measured%2C%20not%20estimated-0066FF.svg)](./BENCHMARKS.md)
+[![Agent Skills](https://img.shields.io/badge/Agent%20Skills-SKILL.md-000000.svg)](https://agentskills.io)
+[![Impact: Measured, not estimated](https://img.shields.io/badge/Impact-Measured%2C%20not%20estimated-0066FF.svg)](./benchmarks/BENCHMARKS.md)
 
-[**⬇️ Install**](#-install) · [**📊 Read the benchmark**](./BENCHMARKS.md) · [**🧪 The skills**](#-the-skills)
+[**Quickstart**](#quickstart) · [**What's inside**](#whats-inside) · [**How your agent learns**](#how-your-agent-learns) · [**Benchmarks**](./benchmarks/BENCHMARKS.md)
 
 </div>
 
 ---
 
-## The honest pitch
+## Quickstart
 
-We originally launched claiming **75% / 87% token savings**. Those were estimates. They did not survive measurement.
+```bash
+git clone https://github.com/Ijam18/MAJI-Skills.git my-agent
+```
 
-The real, measured impact from **29,582 Claude Code messages** over 19 days:
+1. Open `my-agent` in your agent (Claude Code, Cursor, Antigravity, Codex or Gemini CLI). It reads [`AGENTS.md`](./AGENTS.md) and finds every skill in [`.agents/skills/`](./.agents/skills) on its own.
+2. Say **"run maji-setup"**. Your agent asks a few questions (voice, stack, brand, folders, tools) and saves your answers to `me/profile.md`.
+3. Work as usual. Ask for a plan, a PDF, a poster batch or a deploy, and the agent picks the matching skill and follows it.
+
+**Already have an agent folder?** Clone the kit inside it and link it in:
+
+```bash
+git clone https://github.com/Ijam18/MAJI-Skills.git <your-folder>/.maji-skills
+<your-folder>/.maji-skills/scripts/setup.sh <your-folder>      # Windows: scripts\setup.ps1 <your-folder>
+```
+
+---
+
+## What's inside
+
+Every skill is a folder with one `SKILL.md`: when to use it, the steps, the pitfalls that actually happened, and a done-when checklist. The full list with one line each is in [`AGENTS.md`](./AGENTS.md).
+
+| Area | Skills |
+|---|---|
+| Discipline (apply first) | `maji-mode` · `maji-jimat` |
+| Setup and learning | `maji-setup`* · `maji-learn`* |
+| Plan and run work | `maji-propose` · `maji-session-handoff` · `maji-dev-up` · `maji-deadline-sprint` |
+| Code | `maji-commit` · `maji-debug` · `maji-explain` · `maji-review` · `maji-test`* · `maji-doc`* · `maji-refactor`* · `maji-todo`* |
+| Ship and maintain | `maji-ship` · `maji-repo-hygiene` · `maji-vendor-block` · `maji-scheduled-job` |
+| Product and UI | `maji-ui-review` · `maji-app-capture` |
+| Content and media | `maji-brand-kit` · `maji-image-gen` · `maji-poster-batch` · `maji-video-gen` · `maji-code-video` · `maji-video-transcribe` · `maji-meta-schedule` |
+| Documents and sales | `maji-brand-pdf` · `maji-doc-fill-sign` · `maji-offer` · `maji-client-helpdesk` · `maji-outreach`* |
+| Data and writing | `maji-real-data` · `maji-summary`* |
+
+\* experimental: useful, not yet validated by sustained use outside one owner. How skills move between tiers: [`docs/TIERS.md`](./docs/TIERS.md).
+
+---
+
+## How your agent learns
+
+Everything personal lives in files your agent reads and writes, inside your folder. None of it is committed, so updates never conflict with it.
+
+| File | What it holds | Who writes it |
+|---|---|---|
+| `me/profile.md` | Your voice, language, stack, brand, folders, allowed tools, money and tax details | `maji-setup` (start from [`profile.example.md`](./profile.example.md)) |
+| `me/overrides/<skill>.md` | How one skill should behave differently for you | You or your agent |
+| `.agents/skills/my-<name>/` | New skills your agent builds from work you repeat | `maji-learn` |
+| `me/learned.md` | A short dated log of what was learned and where it went | Your agent |
+
+Every skill starts with **Step 0**: read the profile sections it needs, apply your override if there is one, and ask once if something is missing.
+
+---
+
+## Works with
+
+| Agent | Reads the hub | Finds skills in |
+|---|---|---|
+| Claude Code | `CLAUDE.md` (imports `AGENTS.md`) | `.claude/skills` (a link to `.agents/skills`) |
+| Cursor | `AGENTS.md` | `.agents/skills` |
+| Antigravity | `AGENTS.md` | `.agents/skills` |
+| Codex CLI | `AGENTS.md` | `.agents/skills` |
+| Gemini CLI | `AGENTS.md` (via `.gemini/settings.json`) | `.agents/skills` |
+
+Sources and details per tool: [`docs/tools.md`](./docs/tools.md). On Windows, git may check out `.claude/skills` as a plain file; run `scripts\setup.ps1` or enable `core.symlinks`.
+
+---
+
+## Updating
+
+```bash
+git pull --ff-only
+```
+
+Your `me/` folder and `my-*` skills are gitignored, so a pull never touches them. What changed: [`CHANGELOG.md`](./CHANGELOG.md).
+
+**Upgrading from v1:** skills moved from the repo root, `experimental/` and `workflows/` into `.agents/skills/`. If you copied skills with `cp -r`, delete the old copies and use the quickstart above. If you symlinked them, point the links at `.agents/skills/<name>`.
+
+---
+
+## Measured, not estimated
+
+We first claimed 75% / 87% token savings. Those were estimates and they did not survive measurement. Measured over **29,582 Claude Code messages** in 19 days:
 
 | Metric | Measured impact |
 |---|---:|
 | Mean output tokens per message | **−18.2%** |
-| 90th-percentile (long replies) | **−28.3%** |
+| 90th percentile (long replies) | **−28.3%** |
 | Median (typical short reply) | **−3.3%** (essentially flat) |
-| Extra reduction with Jimat mode on | −10.1% mean / −16.2% P90 |
+| Extra reduction with `maji-jimat` on | −10.1% mean / −16.2% P90 |
 
-Full method, caveats, and the scripts that produced these numbers: **[BENCHMARKS.md](./BENCHMARKS.md)**.
+The number is the least interesting part. The real value is the discipline: a Pre-Action Gate against scope drift, frustration detection that stops instead of guessing again, and decision modes that keep a plan a plan. Short Q&A, tool output and code blocks barely change.
 
-So if you came for a headline token percentage, that's it: modest, real, and honestly the least interesting thing about these skills. The value is elsewhere.
-
----
-
-## What the skills actually do well
-
-The token math caps *verbose* replies — long answers get ~28% shorter, short ones barely move. But the reason to install this isn't the byte count. It's four failure modes it removes from your day:
-
-- **Scope-drift guards.** You ask Claude to fix a typo; it refactors three files you never mentioned. A **Pre-Action Gate** forces a stop before anything destructive or scope-expanding — force pushes, branch deletes, "while I was in there" rewrites. You review before it happens, not after.
-
-- **Frustration detection.** When you say *"that's not right"*, default behaviour is variant 2, variant 3, variant 4. Here, a frustration signal **halts** and asks what you actually want instead of doubling down. One clean pivot beats five guesses.
-
-- **Decision modes.** Every prompt is read as **discuss / build / pause / pivot**. "Let's proceed phase by phase" stays a *plan*, not 11 surprise commits. The ambiguity that costs you rework gets resolved up front.
-
-- **A portable, consistent discipline.** It's one plain-text file. The same operating posture rides along on **any project, any language, any stack** — and the core patterns (outcome-first, decision modes, frustration signals, banned padding) transfer to a raw system prompt too. You stop re-explaining your working style every session.
-
-That consistency is the actual product. The −18% is a side effect.
-
----
-
-## Where it does *not* help (measured, stated plainly)
-
-- **Short Q&A** — already short, nothing to trim (median moves ~3%).
-- **Tool-call output** — JSON from tools isn't compressed.
-- **Code blocks** — code isn't re-flowed or shortened.
-
-If your workload is mostly short questions or code generation, expect the discipline benefits (scope, frustration, pivots) but little token change. We'd rather you know that before installing.
-
----
-
-## 🧪 The skills
-
-**6 core** — the highest-frequency dev workflows. **5 experimental** — not yet validated by sustained real-world use.
-
-### Core
-
-| Skill | What it does | Frequency |
-|---|---|---|
-| **[maji-mode](./maji-mode/SKILL.md)** | Foundation discipline: outcome-first, decision modes, frustration signals, Pre-Action Gate. Install this first. | Every session |
-| **[maji-jimat](./maji-jimat/SKILL.md)** | Token economy: strips filler + graduated compression (`jimat` / `dry` / `answer-only`). Where the measured token savings actually come from. | Every session |
-| **[maji-commit](./maji-commit/SKILL.md)** | Reads your git diff, writes a conventional-commits message. | Daily |
-| **[maji-explain](./maji-explain/SKILL.md)** | Layered explanations: one-sentence answer → bullets → deep dive on request. | Daily |
-| **[maji-debug](./maji-debug/SKILL.md)** | 5-step protocol: symptom → hypothesis → verify → gate → minimum-change fix. | Per task |
-| **[maji-review](./maji-review/SKILL.md)** | Code review grouped by severity with `file:line` refs. No preamble. | Per task |
-
-Everything else inherits `maji-mode`'s posture (no preamble, banned padding phrases, action-verb endings), so they compose rather than conflict.
-
-### Experimental
-
-`maji-test` · `maji-doc` · `maji-refactor` · `maji-summary` · `maji-todo` — see [`experimental/`](./experimental).
-
-A skill graduates to core when daily/weekly use is proven **and** at least one external contribution (PR, issue, testimonial) validates it. We won't promote on speculation.
-
-### Workflows
-
-Twenty-two playbooks distilled from real, repeated work across many projects: the steps, the order, and the pitfalls that actually bit. They live in [`workflows/`](./workflows).
-
-| Area | Skills |
-|---|---|
-| Plan and run work | `maji-propose` · `maji-session-handoff` · `maji-dev-up` · `maji-deadline-sprint` |
-| Ship and maintain | `maji-ship` · `maji-repo-hygiene` · `maji-vendor-block` · `maji-scheduled-job` |
-| Product and UI | `maji-ui-review` · `maji-app-capture` |
-| Content and media | `maji-brand-kit` · `maji-image-gen` · `maji-poster-batch` · `maji-video-gen` · `maji-code-video` · `maji-video-transcribe` · `maji-meta-schedule` |
-| Documents and sales | `maji-brand-pdf` · `maji-doc-fill-sign` · `maji-offer` · `maji-client-helpdesk` |
-| Data | `maji-real-data` |
-
-Token cost: `maji-jimat` (core) now also covers agentic token economy for subagent and workflow runs.
-
----
-
-## 📦 Install
-
-**Recommended — user-level (applies to every project):**
-
-```bash
-mkdir -p ~/.claude/skills
-git clone https://github.com/Ijam18/MAJI-Skills.git
-cp -r MAJI-Skills/maji-mode ~/.claude/skills/
-```
-
-**Project-level (single repo):**
-
-```bash
-mkdir -p ./.claude/skills
-git clone https://github.com/Ijam18/MAJI-Skills.git
-cp -r MAJI-Skills/maji-mode ./.claude/skills/
-```
-
-**Always-on (loaded every session):** append `maji-mode/SKILL.md` to `~/.claude/CLAUDE.md`.
-
-```bash
-git clone https://github.com/Ijam18/MAJI-Skills.git
-cat MAJI-Skills/maji-mode/SKILL.md >> ~/.claude/CLAUDE.md
-```
-
-Then start a session and type `/maji-mode` (or let user-level skill discovery auto-load it).
-
-**All workflows (Claude Code):**
-
-```bash
-git clone https://github.com/Ijam18/MAJI-Skills.git
-cp -r MAJI-Skills/workflows/maji-* ~/.claude/skills/
-```
-
-**Cursor, Antigravity and other agents:** every skill is a plain `SKILL.md` (frontmatter + markdown). If your agent supports the SKILL.md format, drop the folder into its skills directory. Otherwise add the file as a project rule or custom instruction and ask the agent to follow it, for example *"follow maji-brand-pdf to turn this report into a PDF"*.
-
-**Uninstall:** `rm -rf ~/.claude/skills/maji-mode` (or remove the appended section from `CLAUDE.md`). No telemetry, no phone-home — it's a static markdown file Claude reads locally.
-
----
-
-## Why you can trust the numbers
-
-Three reasons, all checkable:
-
-1. **We published the measurement pipeline.** Two scripts (`parse.py`, `analyze.py`) plus `methodology.md`, AGPL-licensed alongside the skills. They read your local `~/.claude/projects/` logs, write a Parquet table and a `summary.json`, and never send data anywhere (`parse.py --anonymise-projects` even strips project names). You can **reproduce your own before/after** in about two weeks of normal use. See [BENCHMARKS.md § Reproducing the numbers](./BENCHMARKS.md#reproducing-the-numbers).
-
-2. **We corrected our own overclaim in public.** The 75%/87% figures are gone, replaced with −18% / −28% and a versioned changelog explaining why. The benchmark lists its own caveats first: no true control group, one user, one period, cohort sizes differ, `output_tokens` includes uncompressible code and tool calls.
-
-3. **We show the deployment footprint honestly labelled.** Since activation the skills have run continuously across the maintainer's real workload — **3,502 sessions, 145 projects, 164,668 messages, ~48.84B tokens** (28 May – 3 Aug 2026). We call that what it is: **scale-of-deployment evidence, not a controlled comparison.** It proves the discipline is livable day-to-day at scale; it does not re-prove the −18%. Both matter; we don't blur them.
-
-Disclosure: the benchmark author is also the maintainer, measuring their own logs. Independent replication is welcome — open a PR with your `summary.json` and we'll aggregate community data over time (see [ROADMAP.md](./ROADMAP.md)).
-
----
-
-## Who this is for
-
-Solo founders, indie hackers, vibe-coders, and senior devs using Claude as a pair programmer — anyone who loses more time to scope creep and re-explaining their style than to raw token count. Casual weekend tinkerers may find the overhead exceeds the benefit; that's a fair call to make.
+Method, caveats and the scripts to reproduce it on your own logs: [`benchmarks/BENCHMARKS.md`](./benchmarks/BENCHMARKS.md). The benchmark author is also the maintainer, measuring their own logs; independent replication is welcome ([`benchmarks/CONTRIBUTING-BENCHMARKS.md`](./benchmarks/CONTRIBUTING-BENCHMARKS.md)).
 
 ---
 
 ## Contributing
 
-PRs welcome. A pattern earns a place if it's **universal** (not tied to one project/language), **token-neutral-or-positive**, **explainable in two sentences**, and **backed by a real failure mode it prevents**. Bonus points for a `summary.json` showing measured effect — see [CONTRIBUTING-BENCHMARKS.md](./CONTRIBUTING-BENCHMARKS.md). Where this is headed: [ROADMAP.md](./ROADMAP.md).
-
----
+PRs welcome. A skill earns a place if it is **universal** (not tied to one project), **explainable in two sentences**, and **backed by a real failure it prevents**. Run `node scripts/lint-skills.mjs` and `node scripts/build-index.mjs` before opening a PR. Roadmap: [`docs/ROADMAP.md`](./docs/ROADMAP.md).
 
 ## License
 
-**AGPL v3** — strong copyleft. Use, modify, and redistribute freely; derivatives and network-served modifications must also be AGPL v3 and source-available. See [LICENSE](./LICENSE).
-
----
+**AGPL v3.** Use, modify and redistribute freely; derivatives and network-served modifications must also be AGPL v3 and source-available. See [LICENSE](./LICENSE).
 
 ## About MAJI
 
 MAJI (Malaysia Artificial Joint Institute) is an applied-AI movement that ships tools and teaches building over consuming. Origin: Malaysia. Audience: anyone, anywhere.
 
-→ LinkedIn: [Zarul Izham (Ijam)](https://www.linkedin.com/in/zarulijam/) · Threads: [@_zarulijam](https://www.threads.com/@_zarulijam)
-
-Tag the repo when you share it — happy to feature builders using `maji-mode` in the wild.
+LinkedIn: [Zarul Izham (Ijam)](https://www.linkedin.com/in/zarulijam/) · Threads: [@_zarulijam](https://www.threads.com/@_zarulijam)

@@ -7,7 +7,12 @@ node_modules
 .idea
 
 # analytics outputs (contain real message content — never commit)
-analytics/messages.parquet
-analytics/summary.json
-analytics/charts/
+benchmarks/analytics/messages.parquet
+benchmarks/analytics/summary.json
+benchmarks/analytics/charts/
 **/__pycache__/
+
+# Personal, never committed (see AGENTS.md)
+me/
+.agents/skills/my-*
+.maji-skills/
