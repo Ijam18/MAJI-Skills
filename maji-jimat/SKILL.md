@@ -1,6 +1,6 @@
 ---
 name: maji-jimat
-description: Token-economy mode for Claude Code. Strip filler, cap verbose replies, and switch on graduated compression (ringan / penuh / ultra) or the sibling modes dry / answer-only. Fires when the user types "jimat on/off", "jimat ringan/penuh/ultra", "dry on/off", "answer-only on/off", or a per-message "/jimat" prefix. Preserves code, file paths, and accuracy.
+description: Token-economy mode for Claude Code. Strip filler, cap verbose replies, and switch on graduated compression (ringan / penuh / ultra) or the sibling modes dry / answer-only. Fires when the user types "jimat on/off", "jimat ringan/penuh/ultra", "dry on/off", "answer-only on/off", or a per-message "/jimat" prefix. Preserves code, file paths, and accuracy. Also covers agentic token economy: extracting before fan-out, batching items per subagent, pipelines without barriers, and durable state, for when "the workflow burns too many tokens" or "we hit the usage limit".
 ---
 
 # maji-jimat — Token Economy
@@ -76,6 +76,22 @@ Resume compression after.
 - In a compression mode: obey its density; never at the cost of a code block or a warning.
 
 **Does NOT:** shorten code, compress tool-call output, or drop caveats/security info to hit a density target.
+
+---
+
+## Agentic token economy (subagents, workflows, long sessions)
+
+Output style is only half the bill. When the work fans out to subagents, input tokens dominate. These rules come from real runs; the numbers are observations from those runs, not benchmarks.
+
+1. **Extract before you fan out.** Never hand raw logs, transcripts or dumps to agents. Write a script that pulls only what matters (prompts, tool names, file paths, dates) into compact files first. One run went from about 2 GB of session transcripts to about 1 MB of extracts, and the agents read the extracts.
+2. **Batch items per agent.** Give each agent 2-3 related items, not one agent per item. A 39-agent run (one writer plus one verifier per item) hit a usage limit halfway; the same kind of job as 15 agents (2-3 items each) finished well inside it.
+3. **Pipeline, no barrier.** Let each item go write, then verify, on its own. Wait for everything only when a step truly needs all results together (dedupe, cross-item synthesis).
+4. **Point, don't paste.** Give agents file paths and ask them to read what they need. Pasting big JSON into every prompt multiplies its cost by the number of agents.
+5. **Match effort to the step.** Mechanical steps (extract, rename, lint) get low effort; judgement steps (verify, synthesize) get high.
+6. **Don't re-read.** Keep what you learned in the conversation or a notes file; reading the same large file twice is pure waste.
+7. **Put state on durable disk.** Intermediate results in a temp folder vanish on restart, and then the whole run must be paid for again. Write staging output into the repo (a branch) or another durable folder.
+8. **Keep long sessions alive.** One long session per project carries context cheaply. Raise the transcript retention setting (Claude Code: `cleanupPeriodDays` in `~/.claude/settings.json`) so old sessions are not deleted under you.
+9. **Cap and report.** State the agent count and expected size before launching a big run; if coverage is cut (top-N, sampling), say what was dropped.
 
 ---
 
