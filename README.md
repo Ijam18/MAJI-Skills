@@ -2,9 +2,9 @@
 
 # 🛠 MAJI Skills
 
-### A plug-and-play skill kit for your AI agent. Clone it, open it, and your agent works the way we do.
+### Skills for AI agents, built from real work.
 
-One working discipline plus playbooks distilled from real, repeated work: planning, shipping, PDFs, images, video, social media and sales. Works in Claude Code, Cursor, Antigravity, Codex and Gemini CLI. Your agent learns your context and grows its own skills from your work.
+A working discipline plus playbooks distilled from real, repeated work: planning, shipping, documents, images, video, social media and sales. Every skill is a plain `SKILL.md` that Claude Code, Cursor, Antigravity, Codex and Gemini CLI can read, and each one adapts to your own context.
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-0066FF.svg)](./LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-SKILL.md-000000.svg)](https://agentskills.io)

@@ -1,6 +1,6 @@
 # Changelog
 
-## v2.0.0 (2026-10-06): plug-and-play agent kit
+## v2.0.0 (2026-10-06): one layout for every agent
 
 **Breaking: skills moved.** Every skill now lives in `.agents/skills/<name>/`. The old locations (repo root, `experimental/`, `workflows/`) are gone. If you copied skills with `cp -r`, delete the copies and follow the quickstart in the README.
 
