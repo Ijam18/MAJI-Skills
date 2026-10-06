@@ -84,6 +84,21 @@ Everything else inherits `maji-mode`'s posture (no preamble, banned padding phra
 
 A skill graduates to core when daily/weekly use is proven **and** at least one external contribution (PR, issue, testimonial) validates it. We won't promote on speculation.
 
+### Workflows
+
+Twenty-two playbooks distilled from real, repeated work across many projects: the steps, the order, and the pitfalls that actually bit. They live in [`workflows/`](./workflows).
+
+| Area | Skills |
+|---|---|
+| Plan and run work | `maji-propose` · `maji-session-handoff` · `maji-dev-up` · `maji-deadline-sprint` |
+| Ship and maintain | `maji-ship` · `maji-repo-hygiene` · `maji-vendor-block` · `maji-scheduled-job` |
+| Product and UI | `maji-ui-review` · `maji-app-capture` |
+| Content and media | `maji-brand-kit` · `maji-image-gen` · `maji-poster-batch` · `maji-video-gen` · `maji-code-video` · `maji-video-transcribe` · `maji-meta-schedule` |
+| Documents and sales | `maji-brand-pdf` · `maji-doc-fill-sign` · `maji-offer` · `maji-client-helpdesk` |
+| Data | `maji-real-data` |
+
+Token cost: `maji-jimat` (core) now also covers agentic token economy for subagent and workflow runs.
+
 ---
 
 ## 📦 Install
@@ -112,6 +127,15 @@ cat MAJI-Skills/maji-mode/SKILL.md >> ~/.claude/CLAUDE.md
 ```
 
 Then start a session and type `/maji-mode` (or let user-level skill discovery auto-load it).
+
+**All workflows (Claude Code):**
+
+```bash
+git clone https://github.com/Ijam18/MAJI-Skills.git
+cp -r MAJI-Skills/workflows/maji-* ~/.claude/skills/
+```
+
+**Cursor, Antigravity and other agents:** every skill is a plain `SKILL.md` (frontmatter + markdown). If your agent supports the SKILL.md format, drop the folder into its skills directory. Otherwise add the file as a project rule or custom instruction and ask the agent to follow it, for example *"follow maji-brand-pdf to turn this report into a PDF"*.
 
 **Uninstall:** `rm -rf ~/.claude/skills/maji-mode` (or remove the appended section from `CLAUDE.md`). No telemetry, no phone-home — it's a static markdown file Claude reads locally.
 
