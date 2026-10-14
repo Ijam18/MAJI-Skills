@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.1.0 (2026-10-15): free and Pro editions
+
+### Changed
+- The 22 workflow skills are now free editions: every step in order, without the detailed sub-steps, variants, pitfalls and done-when checklist. Each version is marked `-lite`.
+- Discipline, code, setup and learning skills are unchanged and complete.
+
+### Added
+- README section on Free and Pro. Full editions and extra skills are sold separately as MAJI Skills Pro under a commercial license; this repo stays AGPL v3.
+
 ## v2.0.0 (2026-10-06): one layout for every agent
 
 **Breaking: skills moved.** Every skill now lives in `.agents/skills/<name>/`. The old locations (repo root, `experimental/`, `workflows/`) are gone. If you copied skills with `cp -r`, delete the copies and follow the quickstart in the README.

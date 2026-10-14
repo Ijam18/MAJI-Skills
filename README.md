@@ -37,7 +37,7 @@ git clone https://github.com/Ijam18/MAJI-Skills.git <your-folder>/.maji-skills
 
 ## What's inside
 
-Every skill is a folder with one `SKILL.md`: when to use it, the steps, the pitfalls that actually happened, and a done-when checklist. The full list with one line each is in [`AGENTS.md`](./AGENTS.md).
+Every skill is a folder with one `SKILL.md`: when to use it and the steps. Discipline, code and setup skills are complete here. The workflow skills (plan, ship, product, content, documents, data) are free editions: the method in order, enough to run it. The full list with one line each is in [`AGENTS.md`](./AGENTS.md).
 
 | Area | Skills |
 |---|---|
@@ -52,6 +52,16 @@ Every skill is a folder with one `SKILL.md`: when to use it, the steps, the pitf
 | Data and writing | `maji-real-data` · `maji-summary`* |
 
 \* experimental: useful, not yet validated by sustained use outside one owner. How skills move between tiers: [`docs/TIERS.md`](./docs/TIERS.md).
+
+### Free and Pro
+
+| | This repo (free, AGPL v3) | MAJI Skills Pro (paid, on [Agensi](https://agensi.io)) |
+|---|---|---|
+| Discipline, code, setup and learning skills | Complete | Same |
+| Workflow skills | Free edition: every step, in order | Full edition: detailed sub-steps, variants, pitfalls from real incidents with their guards, done-when checklist |
+| Extra skills | | Product, data and billing skills that are not in this repo |
+
+The free editions stay free and keep getting fixes. Pro pays for the time it takes to keep the full editions current.
 
 ---
 
@@ -119,7 +129,7 @@ PRs welcome. A skill earns a place if it is **universal** (not tied to one proje
 
 ## License
 
-**AGPL v3.** Use, modify and redistribute freely; derivatives and network-served modifications must also be AGPL v3 and source-available. See [LICENSE](./LICENSE).
+**AGPL v3** for everything in this repo. Use, modify and redistribute freely; derivatives and network-served modifications must also be AGPL v3 and source-available. See [LICENSE](./LICENSE). MAJI Skills Pro is a separate, commercially licensed product and is not covered by this license.
 
 ## About MAJI
 
