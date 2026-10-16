@@ -1,6 +1,6 @@
 ---
 name: maji-code-video
-description: Build promo, intro or reel videos from code. The film is an HTML page with a time-driven timeline, rendered frame by frame with Playwright and encoded with ffmpeg, with music and SFX mixed in 2-3 versions for the owner to pick. Uses real app footage or approved posters, no AI video generator. Use when someone says "make a promo video for the app", "Apple-style intro video", "60s showcase in 16:9 and 9:16", "turn these posters into a reel", "add music and sound effects", or in casual Malay "buat video promo app ni", "letak lagu dan sfx", "jom buat reel minggu ni". Not for live-action editing or talking-head video.
+description: Build promo, intro or reel videos from code. The film is an HTML page with a time-driven timeline, rendered frame by frame with Playwright and encoded with ffmpeg, with music and SFX mixed in 2-3 versions for the owner to pick. Uses real app footage or approved posters, no AI video generator. Use when someone says "make a promo video for the app", "Apple-style intro video", "60s showcase in 16:9 and 9:16", "turn these posters into a reel", "add music and sound effects", "Apple-style commercial", "export it as a GIF", "make an emoji GIF", "generative background for the video". Not for live-action editing or talking-head video.
 metadata:
   tier: workflow
   category: content

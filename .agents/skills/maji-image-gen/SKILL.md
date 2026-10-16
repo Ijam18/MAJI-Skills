@@ -1,6 +1,6 @@
 ---
 name: maji-image-gen
-description: Generate and edit AI images that survive QA. Write the brief, prepare references (face, product, brand), generate one image at a time (Canva generate-image, Gemini image models such as "Nano Banana", Higgsfield or Bloom), QA every image at full size (distinct faces, apparent age, hands, no text or logos baked in, colours against the swatch), edit (background removal, watermark, crop per ratio), then save a reusable prompt pack. Use when someone says "generate AI models for the poster", "professional photos for the deck, not screenshots", "product shot on a clean background", "watermark this screenshot", "write a prompt pack I can run in Gemini", or in Malay "generate gambar AI guna muka ni", "muka diorang kena distinct", "buatkan prompt pack". Not for text layouts (render text locally via maji-poster-batch) or video (use maji-video-gen).
+description: Generate and edit AI images that survive QA. Write the brief, prepare references (face, product, brand), generate one image at a time (Canva generate-image, Gemini image models such as "Nano Banana", Higgsfield or Bloom), QA every image at full size (distinct faces, apparent age, hands, no text or logos baked in, colours against the swatch), edit (background removal, watermark, crop per ratio), then save a reusable prompt pack. Use when someone says "generate AI models for the poster", "professional photos for the deck, not screenshots", "product shot on a clean background", "watermark this screenshot", "write a prompt pack I can run in Gemini", "Midjourney prompt", "image prompt for this scene", "character reference sheet", "same character in every image". Not for text layouts (render text locally via maji-poster-batch) or video (use maji-video-gen).
 metadata:
   tier: workflow
   category: content
@@ -22,10 +22,10 @@ Read `me/profile.md` if it exists (Brand, Voice and language, Tools and credits,
 
 ## Steps
 
-1. **Write the brief.** Use and size (feed 4:5 at 1080x1350, story 9:16 at 1080x1920, deck 16:9, print 1:1), subject, and where text will sit.
+1. **Write the brief.** Parse the request first: subject, mood, setting, action, style (photo-real, illustration, painterly).
 2. **Pick the tool and check the budget.** Options: Canva `generate-image` through its connector (async; poll `get-generate-image-job`), Gemini image models ("Nano Banana", e.g.
 3. **Prepare references.**
-4. **Write the prompt** one clause per concern, so a failure can be fixed by changing one clause:
+4. **Write the prompt** one clause per concern, so a failure can be fixed by changing one clause.
 5. **Generate one at a time.** Queue the jobs; respect the cooldown (Canva allows about one image per 3 to 5 minutes; parallel calls fail on quota).
 6. **QA at full size.** Build a face sheet (crop each face with PIL or sharp, view at 200% next to its reference).
 7. **Fix by clause.** Regenerate changing only the failing clause.
@@ -49,3 +49,6 @@ Read `me/profile.md` if it exists (Brand, Voice and language, Tools and credits,
 
 This is the free edition: the method in order, enough to run it. The full edition (MAJI Skills Pro, on [Agensi](https://agensi.io)) adds the detailed sub-steps, variants, pitfalls from real incidents with their guards, and the done-when checklist.
 
+---
+
+*`maji-image-gen` is part of [MAJI Skills](https://github.com/Ijam18/MAJI-Skills) · By MAJI · No Codes, Only Vibes.*

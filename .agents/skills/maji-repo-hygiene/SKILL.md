@@ -1,6 +1,6 @@
 ---
 name: maji-repo-hygiene
-description: One ritual to clean a repository before backup, handover or open-sourcing. Parallel audit of structure, dead code and assets, dependencies, secrets and personal data; deep-verify every removal candidate; restructure in small steps; purge leaked files from history (git filter-repo or a squash import) only after explicit approval; prove behaviour unchanged with the full suite; publish a clean snapshot or a private backup; finish with a dated list of keys to rotate. Use when a repo is messy, before making it public, before handing it to a new maintainer, after a secret or client data landed in git, or when a project folder has no .git. Triggers include 'clean up this repo', 'remove dead code', 'purge secrets from history', 'make this repo public', 'back up to GitHub', 'hand this over', 'kemas repo ni', 'buang dead code', 'nak publish public'.
+description: One ritual to clean a repository before backup, handover or open-sourcing. Parallel audit of structure, dead code and assets, dependencies, secrets and personal data; deep-verify every removal candidate; restructure in small steps; purge leaked files from history (git filter-repo or a squash import) only after explicit approval; prove behaviour unchanged with the full suite; publish a clean snapshot or a private backup; finish with a dated list of keys to rotate. Use when a repo is messy, before making it public, before handing it to a new maintainer, after a secret or client data landed in git, or when a project folder has no .git. Triggers include 'clean up this repo', 'remove dead code', 'purge secrets from history', 'make this repo public', 'back up to GitHub', 'hand this over', 'find churn hotspots', 'which files are risky', 'is this safe to post', 'check for private names before publishing'.
 metadata:
   tier: workflow
   category: ship
@@ -49,4 +49,4 @@ This is the free edition: the method in order, enough to run it. The full editio
 
 ---
 
-*`maji-repo-hygiene` is part of MAJI Skills · By MAJI · No Codes, Only Vibes.*
+*`maji-repo-hygiene` is part of [MAJI Skills](https://github.com/Ijam18/MAJI-Skills) · By MAJI · No Codes, Only Vibes.*

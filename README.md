@@ -43,12 +43,12 @@ Every skill is a folder with one `SKILL.md`: when to use it and the steps. Disci
 |---|---|
 | Discipline (apply first) | `maji-mode` · `maji-jimat` |
 | Setup and learning | `maji-setup`* · `maji-learn`* |
-| Plan and run work | `maji-propose` · `maji-session-handoff` · `maji-dev-up` · `maji-deadline-sprint` |
+| Plan and run work | `maji-propose` · `maji-stress-test` · `maji-market-scan` · `maji-session-handoff` · `maji-onboard` · `maji-dev-up` · `maji-deadline-sprint` |
 | Code | `maji-commit` · `maji-debug` · `maji-explain` · `maji-review` · `maji-test`* · `maji-doc`* · `maji-refactor`* · `maji-todo`* |
-| Ship and maintain | `maji-ship` · `maji-repo-hygiene` · `maji-vendor-block` · `maji-scheduled-job` |
-| Product and UI | `maji-ui-review` · `maji-app-capture` |
-| Content and media | `maji-brand-kit` · `maji-image-gen` · `maji-poster-batch` · `maji-video-gen` · `maji-code-video` · `maji-video-transcribe` · `maji-meta-schedule` |
-| Documents and sales | `maji-brand-pdf` · `maji-doc-fill-sign` · `maji-offer` · `maji-client-helpdesk` · `maji-outreach`* |
+| Ship and maintain | `maji-ship` · `maji-observe` · `maji-repo-hygiene` · `maji-vendor-block` · `maji-scheduled-job` · `maji-skill-vet` |
+| Product and UI | `maji-ui-review` · `maji-motion` · `maji-native-wrap` · `maji-app-capture` · `maji-api-contract` · `maji-ai-eval` · `maji-seo-audit` |
+| Content and media | `maji-brand-kit` · `maji-image-gen` · `maji-poster-batch` · `maji-video-gen` · `maji-code-video` · `maji-video-transcribe` · `maji-meta-schedule` · `maji-blender` |
+| Documents and sales | `maji-brand-pdf` · `maji-doc-fill-sign` · `maji-offer` · `maji-proposal` · `maji-client-helpdesk` · `maji-outreach`* · `maji-event-notes` |
 | Data and writing | `maji-real-data` · `maji-summary`* |
 
 \* experimental: useful, not yet validated by sustained use outside one owner. How skills move between tiers: [`docs/TIERS.md`](./docs/TIERS.md).

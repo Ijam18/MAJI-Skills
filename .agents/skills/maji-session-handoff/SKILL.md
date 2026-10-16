@@ -1,6 +1,6 @@
 ---
 name: maji-session-handoff
-description: Keep work continuous across sessions, context compaction and repos. Boots the same working rules every session, checks connectors, saves state on demand (dated notes, plan progress, processes stopped), resumes from saved state, writes cross-repo handoff files with a data contract and OPEN/DONE status, and borrows patterns from sibling projects read-only. Use when the user says "save state", "save everything, continue later", "resume", "continue where we left off", "what's the status?", "hand this task to the other repo", "look at how project X does it", "who are you?" after compaction, or "my connector is missing". Malay triggers "save kerja sekarang", "sambung", "apa status sekarang?".
+description: Keep work continuous across sessions, context compaction and repos. Boots the same working rules every session, checks connectors, saves state on demand (dated notes, plan progress, processes stopped), resumes from saved state, writes cross-repo handoff files with a data contract and OPEN/DONE status, and borrows patterns from sibling projects read-only. Use when the user says "save state", "save everything, continue later", "resume", "continue where we left off", "what's the status?", "hand this task to the other repo", "look at how project X does it", "who are you?" after compaction, "my connector is missing", "do you remember", "when did we", "check history", "brief me", "where did we leave off", "load project X" or "list projects".
 metadata:
   tier: workflow
   category: plan
@@ -23,6 +23,7 @@ Use:
 - Work that spans two repos or two agent sessions.
 - Building something by borrowing a pattern from another of the user's projects.
 - A connector or MCP server is missing, duplicated or failing.
+- "Do you remember", "when did we", "have we done": recall from saved notes (step 6).
 
 Not:
 - One-off questions inside a single session.
@@ -33,10 +34,11 @@ Not:
 1. **Boot the same rules.** Shared working rules live in ONE global file, loaded every session (Claude Code: `~/.claude/CLAUDE.md`, injected by a SessionStart hook.
 2. **Check connectors.** List servers (Claude Code: `/mcp` or `claude mcp list`.
 3. **Borrow from another project, read-only.** Spawn a read-only explore agent into the source repo (Claude Code: an Explore subagent.
-4. **Save on demand.** On "save":
+4. **Save on demand.** On "save" (only on request, never as a silent end-of-task habit):
 5. **Resume.** On "resume", "continue", "what's the status?": read the index, plan PROGRESS, `git status` and `git log -10`.
-6. **Hand off across repos.** Write `handoffs/<date>-<slug>.md` in the TARGET repo (a folder, not the repo root):
-7. **Maintain the config.** Measure real token usage from session logs before claiming savings.
+6. **Recall on request.** Pull 2 to 4 specific keywords from the question (drop stopwords; keep proper nouns, feature names, file paths).
+7. **Hand off across repos.** Write `handoffs/<date>-<slug>.md` in the TARGET repo (a folder, not the repo root):
+8. **Maintain the config.** Measure real token usage from session logs before claiming savings.
 
 ## Composes with
 
@@ -46,3 +48,6 @@ maji-mode (shared rules to boot) · maji-jimat (compression mode to boot) · maj
 
 This is the free edition: the method in order, enough to run it. The full edition (MAJI Skills Pro, on [Agensi](https://agensi.io)) adds the detailed sub-steps, variants, pitfalls from real incidents with their guards, and the done-when checklist.
 
+---
+
+*`maji-session-handoff` is part of [MAJI Skills](https://github.com/Ijam18/MAJI-Skills) · By MAJI · No Codes, Only Vibes.*

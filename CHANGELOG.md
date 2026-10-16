@@ -1,5 +1,13 @@
 # Changelog
 
+## v2.2.0 (2026-10-16): thirteen new skills, refreshed free editions
+
+### Added
+- Free editions of 13 new workflow skills: `maji-proposal`, `maji-market-scan`, `maji-stress-test`, `maji-onboard`, `maji-event-notes`, `maji-motion`, `maji-native-wrap`, `maji-blender`, `maji-observe`, `maji-ai-eval`, `maji-api-contract`, `maji-seo-audit`, `maji-skill-vet`.
+
+### Changed
+- 11 free editions refreshed from their full editions (new steps and triggers): `maji-offer`, `maji-propose`, `maji-session-handoff`, `maji-ship`, `maji-repo-hygiene`, `maji-scheduled-job`, `maji-ui-review`, `maji-code-video`, `maji-image-gen`, `maji-video-gen`, `maji-client-helpdesk`.
+
 ## v2.1.0 (2026-10-15): free and Pro editions
 
 ### Changed

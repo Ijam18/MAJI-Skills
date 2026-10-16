@@ -1,6 +1,6 @@
 ---
 name: maji-ui-review
-description: Visual UI review loop for web apps and PWAs. Lock the brand or a native reference, build 2-3 clickable mockups, serve them to a real phone, tweak straight from the reviewer's screenshots, prove each change with headless desktop + mobile screenshots, then port in phases and polish copy, PWA, SEO and performance. Use when someone says "revamp this UI", "make it feel like a native app", "here's a screenshot, fix this", "make it mobile / PWA", "do a mockup first", "the page is slow", "remove the em-dashes", or in casual Malay "jom bincang UI ni", "buat mockup dulu", "tak cantik la, betulkan ni". Not for backend-only work or pixel-perfect handoff from a finished design file.
+description: Visual UI review loop for web apps and PWAs. Lock the brand or a native reference, build 2-3 clickable mockups, serve them to a real phone, tweak straight from the reviewer's screenshots, prove each change with headless desktop + mobile screenshots, then port in phases and polish copy, PWA, SEO and performance. Use when someone says "revamp this UI", "make it feel like a native app", "here's a screenshot, fix this", "make it mobile / PWA", "do a mockup first", "the page is slow", "remove the em-dashes", "stress-test this screen with worst-case data", "check it with keyboard and screen reader", "review the motion", "why would a visitor trust this site?". Not for backend-only work or pixel-perfect handoff from a finished design file.
 metadata:
   tier: workflow
   category: product
@@ -33,9 +33,10 @@ Not for:
 2. **Mockup 2-3 concepts before wiring anything.** Desktop + mobile.
 3. **Serve to a real phone.** LAN review (same Wi-Fi), `cloudflared tunnel --url http://localhost:3000` quick tunnel, or a Vercel preview.
 4. **Tweak from screenshots.** Reviewer sends screenshot + short instruction.
-5. **Prove it before saying done.** Playwright: log in with a test account, open the route, wait for network idle, screenshot desktop and mobile viewports.
-6. **Port to the real app in phases** until the reviewer says the design is okay.
-7. **Polish pass.**
+5. **Stress and access gate before asking for approval.**
+6. **Prove it before saying done.** Playwright: log in with a test account, open the route, wait for network idle, screenshot desktop and mobile viewports.
+7. **Port to the real app in phases** until the reviewer says the design is okay.
+8. **Polish pass.**
 
 ## Composes with
 

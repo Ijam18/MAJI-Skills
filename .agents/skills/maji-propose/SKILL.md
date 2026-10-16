@@ -1,6 +1,6 @@
 ---
 name: maji-propose
-description: Discuss-first planning loop for any non-trivial change. Survey read-only, write ONE plan with numbered options (exactly one recommended, cost and risk on each, a one-line glossary for internal terms), let the user pick by number, then execute in waves with tests, a status heartbeat after every wave without being asked, and a local commit per wave. Saying "proceed" during planning locks the plan only and is never permission to code. Use when the user says "propose a plan", "let's discuss first", "do a full audit", "what's left in the backlog?", "test kit and audit before deploy", or asks for your honest opinion on the project. Malay triggers "jom bincang dulu", "apa lagi backlog?", "buat 1 sampai 5".
+description: Discuss-first planning loop for any non-trivial change. Survey read-only, write ONE plan with numbered options (exactly one recommended, cost and risk on each, a one-line glossary for internal terms), let the user pick by number, then execute in waves with tests, a status heartbeat after every wave without being asked, and a local commit per wave. Saying "proceed" during planning locks the plan only and is never permission to code. Use when the user says "propose a plan", "let's discuss first", "do a full audit", "what's left in the backlog?", "test kit and audit before deploy", "resume the plan", "pick up where we left off", "add this to the plan", "should we build or buy X", "write an ADR", or asks for your honest opinion on the project.
 metadata:
   tier: workflow
   category: plan
@@ -20,7 +20,7 @@ Read `me/profile.md` if it exists (Stack, Folders, Ports, Tools and credits). If
 Use:
 - Any change bigger than one obvious edit: feature, refactor, audit, migration, framework upgrade, pre-deploy check.
 - User asks for the backlog, the status, or your honest opinion on the project.
-- User is in discuss mode ("let's discuss", "propose", "jom bincang").
+- User is in discuss mode ("let's discuss", "propose").
 
 Not:
 - One-line fix with a clear spec: just do it (errors go to maji-debug).
@@ -35,9 +35,10 @@ Not:
 4. **Write ONE plan file** (e.g.
 5. **Ask by number.** Ask with a structured question (Claude Code: AskUserQuestion.
 6. **Lock, do not build.** "proceed", "ok", "go" during planning = plan locked.
-7. **Execute in waves, P0 first.** Per wave: re-check each item still applies (the table to drop may already be gone), fix, add one regression test per fix, run targeted tests plus typecheck and lint (`tsc --noEmit`, eslint).
+7. **Execute in waves, P0 first.** Within a severity, order by impact against effort (high impact, low effort first).
 8. **Heartbeat after every wave, unasked.** Post the status block below (plus a push notification if your client has one).
 9. **Commit per wave** locally, only on a green gate.
+10. **Resume or append from the file.** After a compaction or a new session, read the plan file, report done / pending / blocked counts and restart at the first `[ ]` item; no re-explaining needed.
 
 ## Composes with
 
@@ -47,3 +48,6 @@ maji-mode (decision modes, Pre-Action Gate) · maji-explain ("what does X mean?"
 
 This is the free edition: the method in order, enough to run it. The full edition (MAJI Skills Pro, on [Agensi](https://agensi.io)) adds the detailed sub-steps, variants, pitfalls from real incidents with their guards, and the done-when checklist.
 
+---
+
+*`maji-propose` is part of [MAJI Skills](https://github.com/Ijam18/MAJI-Skills) · By MAJI · No Codes, Only Vibes.*

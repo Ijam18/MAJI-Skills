@@ -1,6 +1,6 @@
 ---
 name: maji-ship
-description: Gated ship-to-production workflow. Local first, full gate (typecheck, lint, test, build), PR with green CI, database migration before code, then every production step the agent is blocked from or should not run (db push, prod deploy, secrets, prod SQL) handed to a human as copy-ready commands, followed by live verification, lockdown and a recorded rollback target. Use when a change is ready to leave the laptop, when a migration must reach prod, when going live on a new host, when backfilling prod data, or when a 'deploy failed' email or a down site shows up right after a release. Triggers include 'ship this', 'deploy to prod', 'open a PR and merge', 'go live', 'apply the migration to prod', 'why did the deploy fail', 'jom deploy', 'push ke prod', 'dah boleh live ke'.
+description: Gated ship-to-production workflow. Local first, full gate (typecheck, lint, test, build), PR with green CI, database migration before code, then every production step the agent is blocked from or should not run (db push, prod deploy, secrets, prod SQL) handed to a human as copy-ready commands, followed by live verification, lockdown and a recorded rollback target. Use when a change is ready to leave the laptop, when a migration must reach prod, when going live on a new host, when backfilling prod data, or when a 'deploy failed' email or a down site shows up right after a release. Triggers include 'ship this', 'deploy to prod', 'open a PR and merge', 'go live', 'apply the migration to prod', 'why did the deploy fail', 'write a post-mortem', 'what went wrong', 'log this failure'.
 metadata:
   tier: workflow
   category: ship
@@ -33,6 +33,7 @@ Read `me/profile.md` if it exists (Stack, Folders, Tools and credits). If `me/ov
 8. **Verify live.** `vercel ls` / `inspect` / `logs` or `flyctl releases`: confirm the URL is the NEW deployment (an old deployment serving 404 looks like prod).
 9. **Lock down after first go-live.** Audit routes for missing auth and IDOR, tighten RLS, turn on deployment protection, firewall rules, bot protection, rate limits.
 10. **Record.** Deployment id, rollback target, migrations applied, manual items still open.
+11. **Post-incident note (only when something broke).** On a failure signal (crash, rollback, failed migration, leaked secret, data loss, hours lost on a dead end) ask once: "Worth a post-mortem?" No: log nothing, move on.
 
 ## Composes with
 
@@ -48,4 +49,4 @@ This is the free edition: the method in order, enough to run it. The full editio
 
 ---
 
-*`maji-ship` is part of MAJI Skills · By MAJI · No Codes, Only Vibes.*
+*`maji-ship` is part of [MAJI Skills](https://github.com/Ijam18/MAJI-Skills) · By MAJI · No Codes, Only Vibes.*

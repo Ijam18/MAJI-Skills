@@ -1,6 +1,6 @@
 ---
 name: maji-client-helpdesk
-description: Answer client and stakeholder questions from the real running system, turn recurring questions into tracked tickets, mine tickets into self-serve fixes and an FAQ, and close the support season with backup and handover. Use when a client, helpdesk team or user group asks about a live app, when a chat group needs to become a ticket queue, when repeated tickets should become FAQ pages or guides, or when a project is being closed or handed to a successor. Triggers include "help me answer this client question", "is this feature in the system", "turn the group chat into tickets", "build an FAQ from our tickets", "close the project and hand it over", "tolong jawab soalan ni", "check dekat localhost dulu", "tutup projek ni".
+description: Answer client and stakeholder questions from the real running system, turn recurring questions into tracked tickets, mine tickets into self-serve fixes and an FAQ, and close the support season with backup and handover. Use when a client, helpdesk team or user group asks about a live app, when a chat group needs to become a ticket queue, when repeated tickets should become FAQ pages or guides, or when a project is being closed or handed to a successor. Triggers include "help me answer this client question", "is this feature in the system", "turn the group chat into tickets", "build an FAQ from our tickets", "close the project and hand it over", "write the weekly update for the client", "3P update", "status report for the stakeholders", "draft FAQ answers".
 metadata:
   tier: workflow
   category: business
@@ -22,6 +22,7 @@ Use when:
 - A chat group (Telegram, WhatsApp, Slack) keeps asking the same things and needs tracking.
 - Ticket volume justifies an FAQ, guides and self-serve features.
 - A support season or project ends and needs backup, ticket close and handover.
+- A client, sponsor or leadership group needs a regular status update on the support work.
 
 Not when:
 - The question is a live bug with a stack trace: use maji-debug.
@@ -56,3 +57,6 @@ Not when:
 
 This is the free edition: the method in order, enough to run it. The full edition (MAJI Skills Pro, on [Agensi](https://agensi.io)) adds the detailed sub-steps, variants, pitfalls from real incidents with their guards, and the done-when checklist.
 
+---
+
+*`maji-client-helpdesk` is part of [MAJI Skills](https://github.com/Ijam18/MAJI-Skills) · By MAJI · No Codes, Only Vibes.*

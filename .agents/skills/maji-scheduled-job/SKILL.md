@@ -1,6 +1,6 @@
 ---
 name: maji-scheduled-job
-description: Install a recurring job that cannot fail silently, and sweep what piles up. Pick a runner (launchd, cron, Vercel cron, GitHub Actions, scheduled cloud machine, pg_cron), register it, add preflight checks, lock, retries and alerts, ship a pruner in the same change, then verify real output. Also covers diagnosing "it keeps failing" and the safe sweep ritual: read-only audit, keep/stop/remove by bucket, move-only, manifest, retire with a re-enable note. Triggers: "set up a cron job", "keep this always up to date", "the job keeps failing", "my machine is slow, what can I close", "clean up my files". Malay: "set cron job", "banyak kali failed la", "kemaskan fail".
+description: Install a recurring job that cannot fail silently, and sweep what piles up. Pick a runner (launchd, cron, Vercel cron, GitHub Actions, scheduled cloud machine, pg_cron), register it, add preflight checks, lock, retries and alerts, ship a pruner in the same change, then verify real output. Also covers diagnosing "it keeps failing" and the safe sweep ritual (read-only audit, keep/stop/remove by bucket, move-only, manifest, retire with a re-enable note). Triggers include "set up a cron job", "keep this always up to date", "the job keeps failing", "my machine is slow, what can I close", "clean up my files", "audit log for this job", "tamper-evident log of what the agent did".
 metadata:
   tier: workflow
   category: ship

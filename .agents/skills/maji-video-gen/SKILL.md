@@ -1,6 +1,6 @@
 ---
 name: maji-video-gen
-description: Produce short AI-generated videos end to end. Lock the objective and a timestamped shot list (A-roll and B-roll), write a prompt pack per shot, approve stills before spending video credits, generate takes one job at a time with a generator the owner allows (for example Higgsfield), pick takes, add music and SFX in 2-3 mixes for the owner to choose, QA every frame, then export 9:16 (plus 16:9 or 4:5) with cover and caption. Use when someone says "make an AI video", "prompt pack by timestamp", "animate this still", "same face in every shot", "AI news anchor clip" or "video for the hackathon", or in casual Malay "buat prompt ikut timestamp", "jadikan gambar ni video", "nak muka sama setiap shot". Not for code-rendered films (use maji-code-video) or transcription (use maji-video-transcribe).
+description: Produce short AI-generated videos end to end. Lock the objective and a timestamped shot list (A-roll and B-roll), write a prompt pack per shot, approve stills before spending video credits, generate takes one job at a time with a generator the owner allows (for example Higgsfield), pick takes, add music and SFX in 2-3 mixes for the owner to choose, QA every frame, then export 9:16 (plus 16:9 or 4:5) with cover and caption. Use when someone says "make an AI video", "prompt pack by timestamp", "animate this still", "same face in every shot", "AI news anchor clip", "video for the hackathon", "shot-by-shot prompts", "frame prompt and motion prompt", "image-to-video workflow" or "strategy first, no prompts yet". Not for code-rendered films (use maji-code-video) or transcription (use maji-video-transcribe).
 metadata:
   tier: workflow
   category: content
@@ -27,7 +27,7 @@ Read `me/profile.md` if it exists (Brand, Voice and language, Tools and credits,
 3. **Shot list by timestamp.** Split A-roll (presenter or main action) from B-roll (supporting shots), one job per shot.
 4. **Write the prompt pack, one block per shot.** Keep what the frame looks like (subject, wardrobe, setting, framing, light) apart from what moves (action, camera, end state), so a failure can be fixed in one part.
 5. **Make and approve the stills first.** Generate start frames one at a time with an image model (see `maji-image-gen`), or use approved photos, posters or renders.
-6. **Generate takes, one job at a time.** Use the approved still as the start image when the tool accepts one and identity matters; prompt-only shots are for scenes with no face.
+6. **Generate takes, one job at a time.** Use the approved still as the start image (image-to-video) when identity, wardrobe or framing must hold; prompt-only (text-to-video) is for atmospheric shots with no face or when exploration speed matters more.
 7. **Pick and fix.** Grab a sample frame per take with ffmpeg into a contact sheet and pick per shot.
 8. **Assemble.** Trim and join the picked takes (a video editor or ffmpeg concat), add overlays and logo in the edit, export a silent master and a `cuts.txt` with hit points.
 9. **Music and SFX in 2-3 mixes.** Propose 2 to 3 genres tied to the audience before mixing.
@@ -52,3 +52,6 @@ Read `me/profile.md` if it exists (Brand, Voice and language, Tools and credits,
 
 This is the free edition: the method in order, enough to run it. The full edition (MAJI Skills Pro, on [Agensi](https://agensi.io)) adds the detailed sub-steps, variants, pitfalls from real incidents with their guards, and the done-when checklist.
 
+---
+
+*`maji-video-gen` is part of [MAJI Skills](https://github.com/Ijam18/MAJI-Skills) · By MAJI · No Codes, Only Vibes.*
