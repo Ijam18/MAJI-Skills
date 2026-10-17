@@ -51,7 +51,7 @@ PY
 
 put_block "$TARGET/AGENTS.md" "## MAJI Skills
 This folder uses the MAJI Skills kit. Before any task, read \`$REL/AGENTS.md\` and follow it: discipline first (\`maji-mode\`), match a skill from its index, and run each skill's Step 0.
-- Skills are linked into \`.agents/skills/\` (and \`.claude/skills/\`). Your own skills go in \`.agents/skills/my-<name>/\` (\`maji-learn\`).
+- Skills are linked into \`.agents/skills/\` (and \`.claude/skills/\`). Your own skills go in \`.agents/skills/my-<name>/\`.
 - Personal files live in \`me/\` here: \`me/profile.md\` (run \`maji-setup\`), \`me/overrides/<skill>.md\`, \`me/learned.md\`. Never commit them.
 - Update the kit: \`git -C $REL pull --ff-only && $REL/scripts/setup.sh .\`"
 

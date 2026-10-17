@@ -3,7 +3,7 @@
 You are working inside a MAJI Skills kit. Read this file before any task.
 
 ## What this is
-A set of skills in `.agents/skills/<name>/SKILL.md`, distilled from real, repeated work. One working discipline, plus playbooks for planning, shipping, documents, images, video, social media and sales. Each skill has the steps, the order, the pitfalls that actually happened, and a done-when checklist.
+A set of skills in `.agents/skills/<name>/SKILL.md`, distilled from real, repeated work. One working discipline, plus everyday code skills: commit, review, test, debug, refactor, document, explain, summarize. Each skill has the steps and the order.
 
 ## How to work here
 1. **Discipline first.** Apply `maji-mode` to every task: outcome first, identify the mode (discuss, build, pause, pivot), stop and re-ask on frustration, and run the Pre-Action Gate before anything risky or irreversible. Apply `maji-jimat` when the user wants fewer tokens or when you fan out many agents.
@@ -12,7 +12,7 @@ A set of skills in `.agents/skills/<name>/SKILL.md`, distilled from real, repeat
 4. **No profile yet?** Suggest `maji-setup`: a short interview that writes `me/profile.md` from `profile.example.md`.
 
 ## Learning
-- When the user repeats the same kind of work two or three times, or says "save this as a skill", use `maji-learn` to write a new skill into `.agents/skills/my-<name>/`.
+- When the user repeats the same kind of work two or three times, or says "save this as a skill", offer to write it as a new skill in `.agents/skills/my-<name>/`.
 - To change how an existing `maji-*` skill behaves for this user, write `me/overrides/<skill>.md`. Never edit a `maji-*` skill file to personalize it, because updates (`git pull`) would conflict.
 - Keep `me/learned.md` as a short dated log of what you learned and where you saved it.
 
@@ -28,13 +28,6 @@ A set of skills in `.agents/skills/<name>/SKILL.md`, distilled from real, repeat
 - `maji-jimat`: Token-economy mode for any coding agent.
 - `maji-mode`: A Claude collaboration discipline.
 
-**Plan and run work**
-- `maji-deadline-sprint`: Run a fixed-date build sprint from brief to live demo.
-- `maji-dev-up`: Bring a project up on localhost reliably and take it down cleanly.
-- `maji-propose`: Discuss-first planning loop for any non-trivial change.
-- `maji-session-handoff`: Keep work continuous across sessions, context compaction and repos.
-- `maji-stress-test`: Pressure-test an idea, product or plan before anyone builds it: write the launch press release and FAQ as if it already shipped, run a pre-mortem that...
-
 **Code**
 - `maji-commit`: Generate a concise commit message from the current git diff.
 - `maji-debug`: Disciplined debug session protocol.
@@ -45,47 +38,9 @@ A set of skills in `.agents/skills/<name>/SKILL.md`, distilled from real, repeat
 - `maji-test` (experimental): Generate disciplined test cases.
 - `maji-todo` (experimental): Extract and triage TODO/FIXME/HACK comments from a codebase.
 
-**Ship and maintain**
-- `maji-native-wrap`: Take an existing PWA or Next.js web app to the App Store and Play Store with Capacitor: decide if a wrapper is worth it, set up the native projects, fix...
-- `maji-observe`: Watch a live app after go-live so failures shout instead of hiding in a log: error tracking per stack (Sentry or a free alternative), source maps and...
-- `maji-repo-hygiene`: One ritual to clean a repository before backup, handover or open-sourcing.
-- `maji-scheduled-job`: Install a recurring job that cannot fail silently, and sweep what piles up.
-- `maji-ship`: Gated ship-to-production workflow.
-- `maji-vendor-block`: Playbook for when a cloud vendor blocks you instead of your code breaking.
-
-**Product and UI**
-- `maji-ai-eval`: Evaluate an LLM feature from real evidence: collect and sample real traces, read them and open-code failures, group notes into a failure taxonomy with...
-- `maji-api-contract`: Design and review an API contract before building it: resources and naming, request and response schemas validated on every input, one success and one error...
-- `maji-app-capture`: Capture the real app (not mockups) with seeded demo data and turn it into a user manual PDF, an interactive click-through demo, a pitch or briefing deck, or...
-- `maji-motion`: Build, fix and review web motion that feels physical and premium in Next.js, React, CSS or Framer Motion: decide whether it should animate at all, wire...
-- `maji-ui-review`: Visual UI review loop for web apps and PWAs.
-
-**Content and media**
-- `maji-blender`: Headless Blender (bpy) pipeline that turns an AI-generated, scanned or traced mesh into a web-ready GLB: keep the source as high-poly, voxel remesh plus...
-- `maji-brand-kit`: Lock the brand guideline before building anything.
-- `maji-code-video`: Build promo, intro or reel videos from code.
-- `maji-image-gen`: Generate and edit AI images that survive QA.
-- `maji-meta-schedule`: Schedule approved Instagram and Facebook feed posts, stories and reels through Meta Business Suite by driving the user's already logged-in browser with...
-- `maji-poster-batch`: Produce a batch of on-brand social media posters (feed 4:5, story 9:16) end to end.
-- `maji-video-gen`: Produce short AI-generated videos end to end.
-- `maji-video-transcribe`: Turn a list of videos into clean transcripts and a digest.
-
-**Documents and sales**
-- `maji-brand-pdf`: Turn content into a branded, print-ready PDF (one-pager, report, formal letter, white paper, syllabus, talk script, slide handout) through one pipeline...
-- `maji-client-helpdesk`: Answer client and stakeholder questions from the real running system, turn recurring questions into tracked tickets, mine tickets into self-serve fixes and...
-- `maji-doc-fill-sign`: Work on a document someone hands you (form, letter, weekly logbook, DOCX template, reviewer feedback, partner deck) without breaking the original.
-- `maji-market-scan`: Run a one-page competitor and market scan before building, pricing or listing something: define the buyer and the job, find 5 to 8 real alternatives...
-- `maji-offer`: Run an inbound inquiry through the full offer pipeline: one fixed price with per-line justification, a one-page scope or module list, an optional training...
-- `maji-outreach` (experimental): Plan who to approach and how.
-- `maji-proposal`: Structure and draft proposal and scope documents a decision-maker can approve: proposal spine before prose, institutional or partnership paper with annexes...
-
-**Data**
-- `maji-real-data`: Replace placeholder or invented data with real, sourced, dated data.
-
 **Writing**
 - `maji-summary` (experimental): Compress long content into structured summary.
 
 **Setup and learning**
-- `maji-learn` (experimental): Turn the user's repeated work into their own skills.
 - `maji-setup` (experimental): First-run setup for a MAJI Skills agent folder.
 <!-- index:end -->

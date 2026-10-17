@@ -5,9 +5,8 @@ Every skill lives in `.agents/skills/<name>/`. Its tier is in the frontmatter (`
 | Tier | Meaning | Skills |
 |---|---|---|
 | `core` | Proven by daily use; the discipline and highest-frequency dev skills | `maji-mode`, `maji-jimat`, `maji-commit`, `maji-debug`, `maji-explain`, `maji-review` |
-| `workflow` | Playbooks distilled from real, repeated work across many projects | 22 skills: see the index in [`AGENTS.md`](../AGENTS.md) |
-| `experimental` | Useful, not yet validated by sustained use outside one owner | `maji-test`, `maji-doc`, `maji-refactor`, `maji-summary`, `maji-todo`, `maji-outreach`, `maji-setup`, `maji-learn` |
-| `personal` | Your own skills, written by `maji-learn` into `.agents/skills/my-*`; gitignored | yours |
+| `experimental` | Useful, not yet validated by sustained use outside one owner | `maji-test`, `maji-doc`, `maji-refactor`, `maji-summary`, `maji-todo`, `maji-setup` |
+| `personal` | Your own skills, written by you or your agent into `.agents/skills/my-*`; gitignored | yours |
 
 ## Prove value before promoting
 An experimental skill graduates to core when:

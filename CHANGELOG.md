@@ -1,5 +1,14 @@
 # Changelog
 
+## v3.0.0 (2026-10-18): free skills only
+
+### Removed
+- The 37 workflow free editions (plan, ship, product, content, documents, data, sales). They live on only as paid skills in MAJI Skills Pro; this repo no longer carries a cut-down copy of any paid skill. Earlier tags keep the old files under AGPL v3.
+
+### Changed
+- This repo now holds only complete, free skills: `maji-mode`, `maji-jimat`, `maji-setup`, `maji-commit`, `maji-debug`, `maji-explain`, `maji-review`, `maji-test`, `maji-doc`, `maji-refactor`, `maji-todo`, `maji-summary`.
+- README, AGENTS.md, tiers and setup scripts no longer point at removed skills.
+
 ## v2.2.0 (2026-10-16): thirteen new skills, refreshed free editions
 
 ### Added

@@ -17,7 +17,7 @@ Read `profile.example.md` (the template) and `me/profile.md` if it already exist
 
 ## When to use / when not
 - **Use:** first session in a new clone; the user's stack, brand, folders or tools changed; a skill keeps asking the same question.
-- **Not:** one-off preferences for a single task (just follow them), or changing how one skill behaves (write `me/overrides/<skill>.md`, see `maji-learn`).
+- **Not:** one-off preferences for a single task (just follow them), or changing how one skill behaves (write `me/overrides/<skill>.md`).
 
 ## Steps
 1. **Check the state.** Does `me/profile.md` exist? If yes, show its section headings and ask which to update. If no, say you will ask a few questions in rounds and that any answer can be skipped.
@@ -47,6 +47,4 @@ Read `profile.example.md` (the template) and `me/profile.md` if it already exist
 - [ ] The user saw which sections are filled and what to do next.
 
 ## Composes with
-- `maji-learn`: grows new skills and overrides once the profile exists.
-- `maji-brand-kit`: builds the brand file the Brand section points to.
 - `maji-mode`: applies the tone and language set here.
