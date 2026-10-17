@@ -4,7 +4,7 @@
 
 ### Skills for AI agents, built from real work.
 
-A working discipline plus playbooks distilled from real, repeated work: planning, shipping, documents, images, video, social media and sales. Every skill is a plain `SKILL.md` that Claude Code, Cursor, Antigravity, Codex and Gemini CLI can read, and each one adapts to your own context.
+A working discipline and everyday code skills, distilled from real, repeated work. Every skill is a plain `SKILL.md` that Claude Code, Cursor, Antigravity, Codex and Gemini CLI can read, and each one adapts to your own context.
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-0066FF.svg)](./LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-SKILL.md-000000.svg)](https://agentskills.io)
@@ -24,7 +24,7 @@ git clone https://github.com/Ijam18/MAJI-Skills.git my-agent
 
 1. Open `my-agent` in your agent (Claude Code, Cursor, Antigravity, Codex or Gemini CLI). It reads [`AGENTS.md`](./AGENTS.md) and finds every skill in [`.agents/skills/`](./.agents/skills) on its own.
 2. Say **"run maji-setup"**. Your agent asks a few questions (voice, stack, brand, folders, tools) and saves your answers to `me/profile.md`.
-3. Work as usual. Ask for a plan, a PDF, a poster batch or a deploy, and the agent picks the matching skill and follows it.
+3. Work as usual. Ask for a commit message, a review, tests or a debug session, and the agent picks the matching skill and follows it.
 
 **Already have an agent folder?** Clone the kit inside it and link it in:
 
@@ -37,21 +37,20 @@ git clone https://github.com/Ijam18/MAJI-Skills.git <your-folder>/.maji-skills
 
 ## What's inside
 
-Every skill is a folder with one `SKILL.md`: when to use it, the steps, the pitfalls that actually happened, and a done-when checklist. The full list with one line each is in [`AGENTS.md`](./AGENTS.md).
+Every skill is a folder with one `SKILL.md`: when to use it and the steps. Every skill here is complete and free. The full list with one line each is in [`AGENTS.md`](./AGENTS.md).
 
 | Area | Skills |
 |---|---|
 | Discipline (apply first) | `maji-mode` · `maji-jimat` |
-| Setup and learning | `maji-setup`* · `maji-learn`* |
-| Plan and run work | `maji-propose` · `maji-session-handoff` · `maji-dev-up` · `maji-deadline-sprint` |
+| Setup | `maji-setup` |
 | Code | `maji-commit` · `maji-debug` · `maji-explain` · `maji-review` · `maji-test`* · `maji-doc`* · `maji-refactor`* · `maji-todo`* |
-| Ship and maintain | `maji-ship` · `maji-repo-hygiene` · `maji-vendor-block` · `maji-scheduled-job` |
-| Product and UI | `maji-ui-review` · `maji-app-capture` |
-| Content and media | `maji-brand-kit` · `maji-image-gen` · `maji-poster-batch` · `maji-video-gen` · `maji-code-video` · `maji-video-transcribe` · `maji-meta-schedule` |
-| Documents and sales | `maji-brand-pdf` · `maji-doc-fill-sign` · `maji-offer` · `maji-client-helpdesk` · `maji-outreach`* |
-| Data and writing | `maji-real-data` · `maji-summary`* |
+| Writing | `maji-summary`* |
 
 \* experimental: useful, not yet validated by sustained use outside one owner. How skills move between tiers: [`docs/TIERS.md`](./docs/TIERS.md).
+
+### Free and paid
+
+Everything in this repo is free and stays free. MAJI Skills Pro is a separate set of paid workflow skills (shipping, offers, brand, video, documents, security and more), sold on [Agensi](https://agensi.io). The two do not overlap: no skill here is a cut-down version of a paid one.
 
 ---
 
@@ -63,7 +62,7 @@ Everything personal lives in files your agent reads and writes, inside your fold
 |---|---|---|
 | `me/profile.md` | Your voice, language, stack, brand, folders, allowed tools, money and tax details | `maji-setup` (start from [`profile.example.md`](./profile.example.md)) |
 | `me/overrides/<skill>.md` | How one skill should behave differently for you | You or your agent |
-| `.agents/skills/my-<name>/` | New skills your agent builds from work you repeat | `maji-learn` |
+| `.agents/skills/my-<name>/` | Your own skills, kept beside the shared ones | You or your agent |
 | `me/learned.md` | A short dated log of what was learned and where it went | Your agent |
 
 Every skill starts with **Step 0**: read the profile sections it needs, apply your override if there is one, and ask once if something is missing.
@@ -119,7 +118,7 @@ PRs welcome. A skill earns a place if it is **universal** (not tied to one proje
 
 ## License
 
-**AGPL v3.** Use, modify and redistribute freely; derivatives and network-served modifications must also be AGPL v3 and source-available. See [LICENSE](./LICENSE).
+**AGPL v3** for everything in this repo. Use, modify and redistribute freely; derivatives and network-served modifications must also be AGPL v3 and source-available. See [LICENSE](./LICENSE). MAJI Skills Pro is a separate, commercially licensed product and is not covered by this license.
 
 ## About MAJI
 

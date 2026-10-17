@@ -1,5 +1,31 @@
 # Changelog
 
+## v3.0.0 (2026-10-18): free skills only
+
+### Removed
+- The 37 workflow free editions (plan, ship, product, content, documents, data, sales). They live on only as paid skills in MAJI Skills Pro; this repo no longer carries a cut-down copy of any paid skill. Earlier tags keep the old files under AGPL v3.
+
+### Changed
+- This repo now holds only complete, free skills: `maji-mode`, `maji-jimat`, `maji-setup`, `maji-commit`, `maji-debug`, `maji-explain`, `maji-review`, `maji-test`, `maji-doc`, `maji-refactor`, `maji-todo`, `maji-summary`.
+- README, AGENTS.md, tiers and setup scripts no longer point at removed skills.
+
+## v2.2.0 (2026-10-16): thirteen new skills, refreshed free editions
+
+### Added
+- Free editions of 13 new workflow skills: `maji-proposal`, `maji-market-scan`, `maji-stress-test`, `maji-onboard`, `maji-event-notes`, `maji-motion`, `maji-native-wrap`, `maji-blender`, `maji-observe`, `maji-ai-eval`, `maji-api-contract`, `maji-seo-audit`, `maji-skill-vet`.
+
+### Changed
+- 11 free editions refreshed from their full editions (new steps and triggers): `maji-offer`, `maji-propose`, `maji-session-handoff`, `maji-ship`, `maji-repo-hygiene`, `maji-scheduled-job`, `maji-ui-review`, `maji-code-video`, `maji-image-gen`, `maji-video-gen`, `maji-client-helpdesk`.
+
+## v2.1.0 (2026-10-15): free and Pro editions
+
+### Changed
+- The 22 workflow skills are now free editions: every step in order, without the detailed sub-steps, variants, pitfalls and done-when checklist. Each version is marked `-lite`.
+- Discipline, code, setup and learning skills are unchanged and complete.
+
+### Added
+- README section on Free and Pro. Full editions and extra skills are sold separately as MAJI Skills Pro under a commercial license; this repo stays AGPL v3.
+
 ## v2.0.0 (2026-10-06): one layout for every agent
 
 **Breaking: skills moved.** Every skill now lives in `.agents/skills/<name>/`. The old locations (repo root, `experimental/`, `workflows/`) are gone. If you copied skills with `cp -r`, delete the copies and follow the quickstart in the README.

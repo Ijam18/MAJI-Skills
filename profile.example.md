@@ -24,7 +24,7 @@
 - Things I never use:
 
 ## Brand
-- Brand file path (brand.json from maji-brand-kit):
+- Brand file path (brand.json, if you have one):
 - Colours, fonts, logo path (if no brand.json yet):
 - House image rules (age range, dress norms, diversity, no logos or text in photos):
 

@@ -95,7 +95,7 @@ The distribution problem is real (17 stars, dormant). But the recovery narrative
 
 ## Not on the roadmap
 
-- A website, a landing page, a paid tier, or a "Pro" version.
+- A website, a landing page, or a paid tier inside this repo. Paid skills are a separate product (MAJI Skills Pro) and never a cut-down copy of a skill here.
 - New skills added for optics rather than proven need.
 - Any number that can't be reproduced by a stranger running `analytics/` on their own machine.
 

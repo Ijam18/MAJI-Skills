@@ -47,7 +47,7 @@ $relSlash = $Rel -replace '\\', '/'
 Set-Block (Join-Path $Target "AGENTS.md") @"
 ## MAJI Skills
 This folder uses the MAJI Skills kit. Before any task, read ``$relSlash/AGENTS.md`` and follow it: discipline first (``maji-mode``), match a skill from its index, and run each skill's Step 0.
-- Skills are copied into ``.agents/skills/`` (and ``.claude/skills/``). Your own skills go in ``.agents/skills/my-<name>/`` (``maji-learn``).
+- Skills are copied into ``.agents/skills/`` (and ``.claude/skills/``). Your own skills go in ``.agents/skills/my-<name>/``.
 - Personal files live in ``me/`` here: ``me/profile.md`` (run ``maji-setup``), ``me/overrides/<skill>.md``, ``me/learned.md``. Never commit them.
 - Update the kit: ``git -C $relSlash pull --ff-only``, then run this script again.
 "@
