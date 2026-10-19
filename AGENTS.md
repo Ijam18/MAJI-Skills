@@ -31,12 +31,15 @@ A set of skills in `.agents/skills/<name>/SKILL.md`, distilled from real, repeat
 **Code**
 - `maji-commit`: Generate a concise commit message from the current git diff.
 - `maji-debug`: Disciplined debug session protocol.
+- `maji-decision-log`: Keep an append-only decision log for a project.
 - `maji-doc` (experimental): Generate concise documentation from code.
 - `maji-explain`: Concise code or concept explainer.
+- `maji-post-mortem`: Write a blameless post-mortem after something went wrong (failed deploy, broken tests, data loss, leaked secret, a dead-end approach that cost hours)...
 - `maji-refactor` (experimental): Scope-guarded refactoring.
 - `maji-review`: Disciplined code review skill.
 - `maji-test` (experimental): Generate disciplined test cases.
 - `maji-todo` (experimental): Extract and triage TODO/FIXME/HACK comments from a codebase.
+- `maji-typescript-strict`: TypeScript type-safety discipline for agents editing .ts and .tsx files.
 
 **Writing**
 - `maji-summary` (experimental): Compress long content into structured summary.
