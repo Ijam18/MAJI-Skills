@@ -41,6 +41,9 @@ A set of skills in `.agents/skills/<name>/SKILL.md`, distilled from real, repeat
 - `maji-todo` (experimental): Extract and triage TODO/FIXME/HACK comments from a codebase.
 - `maji-typescript-strict`: TypeScript type-safety discipline for agents editing .ts and .tsx files.
 
+**Product and UI**
+- `maji-responsive-audit`: Audit and fix a web page or component for every screen size.
+
 **Writing**
 - `maji-summary` (experimental): Compress long content into structured summary.
 

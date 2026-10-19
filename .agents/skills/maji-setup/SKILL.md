@@ -31,7 +31,7 @@ Read `profile.example.md` (the template) and `me/profile.md` if it already exist
 4. **Write `me/profile.md`** in the agent folder. Start from `profile.example.md` (in the kit folder; when the kit was linked into an existing folder, that is `.maji-skills/profile.example.md`) and keep its section headings exactly, because every skill's Step 0 looks for those names. Fill what was answered; leave the rest as blank bullets.
 5. **Create the rest of `me/`.** An empty `me/overrides/` folder, and `me/learned.md` with a first line: `YYYY-MM-DD: profile created by maji-setup (sections filled: ...)`.
 6. **Check it stays private.** Run `git check-ignore me/profile.md`. It must print the path. If it prints nothing, add `me/` to `.gitignore` before anything else.
-7. **Report.** One short table: section, filled or empty, and which skills use it (Brand: brand-pdf, poster-batch, image-gen; Money and tax: offer; Folders: doc-fill-sign, brand-pdf; Ports: dev-up). End with one suggestion for what to do next.
+7. **Report.** One short table: section, filled or empty, and which installed skills read it (check each skill's Step 0; name only skills present in this folder). End with one suggestion for what to do next.
 
 ## Pitfalls
 - **Renamed headings break every skill silently.** Keep the template headings word for word.

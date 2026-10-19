@@ -27,6 +27,9 @@ const firstSentence = (d) => {
 }
 // Personal my-* skills are discovered by the agents directly and never listed in the shared hub.
 const skills = findSkills().map((f) => parse(readFileSync(f, "utf8"))).filter(Boolean).map((d) => d.fm).filter((s) => !s.name.startsWith("my-"))
+const known = new Set(ORDER.map(([c]) => c))
+const unknown = skills.filter((s) => !known.has(s.metadata?.category))
+if (unknown.length) { console.log("unknown category (skill would be missing from AGENTS.md): " + unknown.map((s) => `${s.name}=${s.metadata?.category}`).join(", ")); process.exit(1) }
 const lines = []
 for (const [cat, title] of ORDER) {
   const group = skills.filter((s) => s.metadata?.category === cat).sort((a, b) => a.name.localeCompare(b.name))

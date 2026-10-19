@@ -3,7 +3,7 @@ name: maji-responsive-audit
 description: Audit and fix a web page or component for every screen size. Checks mobile-first layout, dynamic viewport units, safe-area insets, 44px touch targets, fluid type, container queries, responsive images, horizontal overflow and mobile form inputs at 320, 375, 768, 1024 and 1440 px, then reports findings by severity with file:line and the fix. Use when asked to "make this responsive", "fix the mobile layout", "check it on phone", or before shipping a new page.
 metadata:
   tier: core
-  category: frontend
+  category: product
   version: "1.0.0"
 ---
 
