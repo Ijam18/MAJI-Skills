@@ -1,6 +1,6 @@
 ---
 name: maji-post-mortem
-description: Write a blameless post-mortem after something went wrong (failed deploy, broken tests, data loss, leaked secret, a dead-end approach that cost hours): timeline, impact, root cause, what helped, what hurt, and concrete action items with owners. Appends to a project log and reminds you of past lessons when work touches the same area again. Use when the user says "post-mortem", "what went wrong", "log this failure", or after an incident or a wasted afternoon.
+description: "Write a blameless post-mortem after something went wrong (failed deploy, broken tests, data loss, leaked secret, a dead-end approach that cost hours): timeline, impact, root cause, what helped, what hurt, and concrete action items with owners. Appends to a project log and reminds you of past lessons when work touches the same area again. Use when the user says \"post-mortem\", \"what went wrong\", \"log this failure\", or after an incident or a wasted afternoon."
 metadata:
   tier: core
   category: dev

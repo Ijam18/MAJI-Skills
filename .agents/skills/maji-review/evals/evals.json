@@ -1,0 +1,75 @@
+{
+  "skill_name": "maji-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "review this diff sebelum aku push",
+      "should_trigger": true,
+      "expected_output": "Findings grouped by severity (critical, important, style, suggestion) with file:line references and an example fix each.",
+      "files": [
+        "staged git diff"
+      ],
+      "graders": {
+        "must": "Groups findings by severity with file:line references and a concrete fix or pattern for each",
+        "must_not": "Opens with a praise preamble or ends with a \"let me know if you'd like to discuss\" trailer"
+      },
+      "expectations": [
+        "The skill triggered (its SKILL.md was read or its steps were followed in order)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "maji-review src/auth.ts, any issues?",
+      "should_trigger": true,
+      "expected_output": "Only meaningful findings in src/auth.ts, each with evidence; an honest short output if the file is clean.",
+      "files": [
+        "src/auth.ts"
+      ],
+      "graders": {
+        "must": "Reports only findings backed by evidence from src/auth.ts, or says it is clean when it is",
+        "must_not": "Fabricates issues to seem thorough or suggests a sweeping refactor beyond the one file"
+      },
+      "expectations": [
+        "The skill triggered (its SKILL.md was read or its steps were followed in order)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "tolong review PR ni: https://github.com/example/app/pull/42",
+      "should_trigger": true,
+      "expected_output": "Specific, grouped findings for the PR; a repeated issue is listed once with every location.",
+      "files": [],
+      "graders": {
+        "must": "Groups a repeated issue into one finding listing every location, with a specific fix",
+        "must_not": "Leaves vague comments such as \"consider improving this\" or comments on every line"
+      },
+      "expectations": [
+        "The skill triggered (its SKILL.md was read or its steps were followed in order)"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "tulis commit message untuk staged changes ni",
+      "should_trigger": false,
+      "instead": "maji-commit",
+      "expected_output": "A conventional commit message, not a review.",
+      "files": [],
+      "expectations": [
+        "The skill did not trigger",
+        "maji-commit handled it"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "security review penuh app ni before launch, check RLS and API routes",
+      "should_trigger": false,
+      "instead": "maji-security-review",
+      "expected_output": "An authorized security review with a fix-first report, not a code review.",
+      "files": [],
+      "expectations": [
+        "The skill did not trigger",
+        "maji-security-review handled it"
+      ]
+    }
+  ]
+}
