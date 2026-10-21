@@ -1,6 +1,6 @@
 ---
 name: maji-jimat
-description: Token-economy mode for any coding agent. Strip filler, cap verbose replies, and switch on graduated compression (ringan / penuh / ultra) or the sibling modes dry / answer-only. Fires when the user types "jimat on/off", "jimat ringan/penuh/ultra", "dry on/off", "answer-only on/off", or a per-message "/jimat" prefix. Preserves code, file paths, and accuracy. Also covers agentic token economy: extracting before fan-out, batching items per subagent, pipelines without barriers, and durable state, for when "the workflow burns too many tokens" or "we hit the usage limit".
+description: "Token-economy mode for any coding agent. Strip filler, cap verbose replies, and switch on graduated compression (ringan / penuh / ultra) or the sibling modes dry / answer-only. Fires when the user types \"jimat on/off\", \"jimat ringan/penuh/ultra\", \"dry on/off\", \"answer-only on/off\", or a per-message \"/jimat\" prefix. Preserves code, file paths, and accuracy. Also covers agentic token economy: extracting before fan-out, batching items per subagent, pipelines without barriers, and durable state, for when \"the workflow burns too many tokens\" or \"we hit the usage limit\"."
 metadata:
   tier: core
   category: discipline
