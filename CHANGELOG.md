@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+- `maji-debug` 1.1.0: Step 6, the refusal diff. A snapshot before each fix; when the error comes back, compare it with the previous one, list what changed since the snapshot, revert collateral edits, and form a new hypothesis after two failed attempts. New REFUSAL DIFF output block and anti-pattern row.
+
 ## v3.0.0 (2026-10-18): free skills only
 
 ### Removed

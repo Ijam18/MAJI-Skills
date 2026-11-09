@@ -4,7 +4,7 @@ description: Disciplined debug session protocol. Read symptom → form hypothesi
 metadata:
   tier: core
   category: dev
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # maji-debug — Disciplined Debug Protocol
@@ -84,6 +84,29 @@ Apply the smallest diff that resolves the verified hypothesis.
 - No formatting/comment churn unrelated to the fix
 - Add or update a test if logic changed
 
+Before applying it, take a snapshot of the working tree: `git stash create` prints a commit you can diff against later without touching your files (outside git: copy the files you are about to change).
+
+### Step 6: When the fix fails (refusal diff)
+
+If the error comes back after a fix, the same one or a new one, do not stack another fix on top. First:
+
+1. Put the new error next to the previous one. Same error: the fix missed the cause. New error: the fix probably broke something.
+2. List every line changed since the snapshot: `git diff <snapshot>` (or compare against the copies).
+3. Sort each changed line: part of the planned fix (keep), or collateral (anything the fix plan did not name, including formatting and "while I was there" edits). Revert the collateral lines before the next attempt.
+4. After two failed attempts on the same hypothesis, go back to Step 2 and form a new one instead of a third tweak.
+
+Add the block to the output:
+
+```
+REFUSAL DIFF
+Error before: [previous error]
+Error now:    [current error]
+Changed since snapshot: [file:line list]
+Kept (the fix): [lines]
+Reverted (collateral): [lines]
+Next: [retry the same hypothesis once more | new hypothesis]
+```
+
 ---
 
 ## Output Format
@@ -117,6 +140,7 @@ WHY
 | Suggesting a library swap as a "fix" | Library swaps are refactors, not bug fixes |
 | Adding `try/catch` without diagnosing root cause | Catch silences symptoms; find why it threw |
 | "It's probably a race condition" without evidence | State as hypothesis, then verify with logs/test |
+| Stacking fix on fix while the error persists | Refusal diff: compare the errors, revert collateral changes, new hypothesis after two misses |
 
 ---
 
