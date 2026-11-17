@@ -1,10 +1,10 @@
 ---
 name: maji-post-mortem
-description: Write a blameless post-mortem after something went wrong (failed deploy, broken tests, data loss, leaked secret, a dead-end approach that cost hours): timeline, impact, root cause, what helped, what hurt, and concrete action items with owners. Appends to a project log and reminds you of past lessons when work touches the same area again. Use when the user says "post-mortem", "what went wrong", "log this failure", or after an incident or a wasted afternoon.
+description: "Write a blameless post-mortem after something went wrong (failed deploy, data loss, leaked secret, hours lost on a dead end): timeline, impact, root cause, owned action items, appended to a project log that recalls past lessons. Triggers: 'post-mortem', 'what went wrong', 'apa yang silap', 'log this failure'. Not for recovering lost data or handling a security incident while it is still live."
 metadata:
   tier: core
   category: dev
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # maji-post-mortem: Blameless Post-Mortems That Change Something
